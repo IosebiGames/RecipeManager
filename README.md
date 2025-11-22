@@ -8,4 +8,4 @@ Preparation for this Project originally started on October 8th, But development 
 * Design:
 ![image alt](RecepieManager/src/images/RecepieManager.jpg)
 * Startup loading bar:
-  ![image alt](RecepieManager/src/images/RecepieManager_GIF.gif)
+  ![gif alt](RecepieManager/src/images/RecepieManager_GIF.gif)
