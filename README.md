@@ -13,12 +13,12 @@ Preparation for this Project originally started on October 8th, But development 
 * Design 🍥:
 ![image alt](RecepieManager/images/app_image.jpg)
 * Startup loading bar 📶:
-  ![gif alt](RecepieManager/src/images/startup_system.gif)
+  ![gif alt](RecepieManager/images/startup_system.gif)
   * Choose food products 🍔:
-  ![gif alt](RecepieManager/src/images/choose_food.gif)
+  ![gif alt](RecepieManager/images/choose_food.gif)
 * Automatic Screen Cleanup 🧽:
-  ![gif alt](RecepieManager/src/images/automatic_screen_cleanup.gif)
+  ![gif alt](RecepieManager/images/automatic_screen_cleanup.gif)
 * More Information Tab 📜:
-  ![gif alt](RecepieManager/src/images/nutritional_info.gif)
+  ![gif alt](RecepieManager/images/nutritional_info.gif)
 * Sneaky Close Button Effect 📕:
-  ![gif alt](RecepieManager/src/images/close_button_effect.gif)
+  ![gif alt](RecepieManager/images/close_button_effect.gif)
