@@ -3,8 +3,10 @@ package startup;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import main.App;
+import java.io.IOException;
 import Tools.Bounds;
+import Tools.ResourceLoader;
+import main.App;
 
 public class StartupScreen {
 	
@@ -15,7 +17,7 @@ public class StartupScreen {
 	private boolean startup_permission = true;
 	
 	public StartupScreen() {
-	   window = new JFrame("Recepie Manager");
+	   window = new JFrame("Recipie Manager");
 	   window.setResizable(false);
 	   window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   window.setPreferredSize(new Dimension(270, 100));
@@ -24,7 +26,11 @@ public class StartupScreen {
        window.setVisible(true);
        window.getContentPane().setLayout(null);
    
-       setIcon(new ImageIcon(getClass().getResource("/images/icon.png")));
+       try {
+		setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
+	 } catch (IOException e) {
+		e.printStackTrace();
+     }
 
        bar = createBar("Loading.....", 0, true, Bounds.BarBounds, Color.white, Color.red, window, false, true);
      
