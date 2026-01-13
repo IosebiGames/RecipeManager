@@ -119,7 +119,7 @@ public class App {
 		} catch (IOException e) {
 		    System.out.println("Failed to decorate: " + e.getMessage());
 		}
-	    rh.startRecepeSystem();
+	    rh.startRecipeSystem();
 	    
 	    tb.validate(); 
 	}
@@ -134,3 +134,4 @@ public class App {
 	     });
 	}
 }
+
