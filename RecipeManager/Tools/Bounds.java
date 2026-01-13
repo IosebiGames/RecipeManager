@@ -9,7 +9,7 @@ public class Bounds {
 	public static int[] foodsLabelBounds = new int[] { 48, 11, 260, 54 };
 	public static int[] DrinkLabelBounds = new int[] { 187, 64, 151, 144 };
 	public static int[] burgerLabelBounds = new int[] { 10, 64, 151, 144 };
-	public static int[] recipiesLabelBounds = new int[] { 114, 11, 151, 54 };
+	public static int[] recipesLabelBounds = new int[] { 114, 11, 151, 54 };
 	public static int[] burgerFieldLabelBounds = new int[] { 104, 76, 176, 14 };
 	public static int[] DrinkFieldLabelBounds = new int[] { 104, 119, 176, 14 };
 	public static int[] IceCreamFieldLabelBounds = new int[] { 109, 157, 176, 14 };
@@ -18,7 +18,7 @@ public class Bounds {
 	public static int[] totalSumLabelBounds = new int[] { 86, 0, 171, 40 };
 	public static int[] SumNumberLabelBounds = new int[] { 96, 38, 133, 14 };
 	public static int[] foodPanelBounds = new int[] { 0, 0, 338, 256 };
-	public static int[] recipiePanelBounds = new int[] { 450, 0, 338, 256 };
+	public static int[] recipePanelBounds = new int[] { 450, 0, 338, 256 };
 	public static int[] allergenPanelBounds = new int[] { 450, 256, 338, 189 };
 	public static int[] sumPanelBounds = new int[] { 0, 378, 338, 67 };
 	public static int[] InformationPanelBounds = new int[] { 0, 256, 338, 122 };
