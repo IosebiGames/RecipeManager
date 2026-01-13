@@ -17,7 +17,7 @@ public class StartupScreen {
 	private boolean startup_permission = true;
 	
 	public StartupScreen() {
-	   window = new JFrame("Recipie Manager");
+	   window = new JFrame("Recipe Manager");
 	   window.setResizable(false);
 	   window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   window.setPreferredSize(new Dimension(270, 100));
