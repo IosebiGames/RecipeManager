@@ -15,3 +15,6 @@ Idea for this App at the beggining came from one person who addressed sort of Ja
   ![gif alt](RecipeManager/images/nutritional_info.gif)
 * Sneaky Close Button Effect 📕:
   ![gif alt](RecipeManager/images/close_button_effect.gif)
+
+  ## License
+This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.
