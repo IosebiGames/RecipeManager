@@ -12,6 +12,15 @@ public class Sound {
 		  try {
            clip = AudioSystem.getClip();
        	   clip.open(AudioSystem.getAudioInputStream(getClass().getResource(rl.getSoundFile("/sound/click_sound.wav"))));
+       	   
+       	   clip.addLineListener(new LineListener() {
+			 @Override
+			 public void update(LineEvent event) {
+		         if(event.getType() == LineEvent.Type.STOP) {
+		             clip.close(); 	 
+		         }
+			   }
+       	   });
           }catch(Exception e) {
         	 IO.println("Failed to prepare the sound: " + e.getMessage());
         }
@@ -20,4 +29,3 @@ public class Sound {
 	     clip.start();
 	}
 }
-
