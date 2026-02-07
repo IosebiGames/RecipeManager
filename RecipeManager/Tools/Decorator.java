@@ -10,6 +10,7 @@ import main.App;
 import sound.Sound;
 
 public class Decorator implements java.awt.event.ActionListener {
+
     private App app;
     private boolean showingNext = false;
     private Timer imageTimer;
@@ -70,7 +71,6 @@ public class Decorator implements java.awt.event.ActionListener {
     public void actionPerformed(ActionEvent e) {
     	if (e.getSource() == app.buttons[5]) {
     		Burgerpick.setEnabled(true);
-    		sound.playSound();
         	if (!showingNext) {
         		try {
 					app.labels[2].setIcon(new ImageIcon(rl.getImage("/images/Steak.png")));
@@ -109,6 +109,7 @@ public class Decorator implements java.awt.event.ActionListener {
                             app.labels[1].setToolTipText("Chicken Salad");
                             counter = 0; 
                         }
+                        sound.playSound();
                     }
                 });
                 imageTimer.start();
