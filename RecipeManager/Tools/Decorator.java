@@ -18,12 +18,14 @@ public class Decorator implements java.awt.event.ActionListener {
     private JPopupMenu popup1, popup2;
     private int addings = 0;
     private ResourceLoader rl;
+    private Sound sound;
     
     {
     	Burgerpick = new JMenuItem("Pick (60$)");
     	Drinkpick = new JMenuItem("Pick (90$)");
     	popup1 = new JPopupMenu();
     	popup2 = new JPopupMenu();
+    	sound = new Sound();
     }
     public Decorator(App app) {
         this.app = app;
@@ -66,9 +68,9 @@ public class Decorator implements java.awt.event.ActionListener {
         app.buttons[5].addActionListener(this);
     }
     public void actionPerformed(ActionEvent e) {
-        new Sound().playSound();
     	if (e.getSource() == app.buttons[5]) {
     		Burgerpick.setEnabled(true);
+    		sound.playSound();
         	if (!showingNext) {
         		try {
 					app.labels[2].setIcon(new ImageIcon(rl.getImage("/images/Steak.png")));
