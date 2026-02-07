@@ -5,7 +5,6 @@ import java.awt.*;
 import main.App;
 
 public class TextBox {
-	
 	private JTextPane textPane;
 
 	public TextBox(App app) {
@@ -15,7 +14,7 @@ public class TextBox {
 		textPane.setFocusable(false);
 		textPane.setEnabled(false);
 		textPane.setText("                                     What's New:" +
-		                                                            "\n                                     - Vanilla Ice-Cream\n                                     - Meat Salad                                        \n                                     - Vegtable salad \n\n\n  Version:1.0v");
+		                                                            "\n                                     - Improved Sound\n                                     - Dark & Light Mode\n                                     - Removed resource dependency \n\n  Released:7.02.2026\n  Version:1.1v");
 		textPane.setBorder(BorderFactory.createLineBorder(Color.black));
 		app.panels[4].add(textPane);
 	}
