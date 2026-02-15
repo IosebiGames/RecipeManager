@@ -18,7 +18,6 @@ this Application provides a basic example of how Restaurants can make simple and
  
   **How to use RecipeManager:**<br/>
     Make sure that you have a Latest JDK Installed -> Go to 'Download' folder in the Repo -> navigate to release folders -> Download jar files there and run it.
-    Tags can help you to relate older version of RecipeManager and new one.
   ### License
 This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.<br/>
     <br/>**Important!**
