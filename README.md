@@ -1,20 +1,7 @@
-<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.jpg?raw=true" />
-<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.jpg?raw=true" />
-
 RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes and even request them.
 this Application provides a basic example of how Resturants can make simple anc clear UI for their users to order a specific food.
-
-* Demonstrational features 👇
-* Startup loading bar 📶:
-  ![gif alt](RecipeManager/images/startup_system.gif)
-* Choose food products 🍔:
-  ![gif alt](RecipeManager/images/choose_products.gif)
-* Automatic Screen Cleanup 🧽:
-  ![gif alt](RecipeManager/images/automatic_screen_cleanup.gif)
-* More Information Tab 📜:
-  ![gif alt](RecipeManager/images/nutritional_info.gif)
-* Sneaky Close Button Effect 📕:
-  ![gif alt](RecipeManager/images/close_button_effect.gif)
+<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.jpg?raw=true" />
+<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.jpg?raw=true" />
 
   # History of the RecipeManager:
    This development started in November of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
@@ -33,3 +20,15 @@ this Application provides a basic example of how Resturants can make simple anc 
     Tags can help you to relate older version of RecipeManager and new one.
   ## License
 This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.
+
+* Demonstration: 👇
+* Startup loading bar 📶:
+  ![gif alt](RecipeManager/images/startup_system.gif)
+* Choose food products 🍔:
+  ![gif alt](RecipeManager/images/choose_products.gif)
+* Automatic Screen Cleanup 🧽:
+  ![gif alt](RecipeManager/images/automatic_screen_cleanup.gif)
+* More Information Tab 📜:
+  ![gif alt](RecipeManager/images/nutritional_info.gif)
+* Sneaky Close Button Effect 📕:
+  ![gif alt](RecipeManager/images/close_button_effect.gif)
