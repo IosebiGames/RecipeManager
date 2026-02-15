@@ -11,15 +11,15 @@ this Application provides a basic example of how Restaurants can make simple and
    But they have not reached out on that day, But They replied only on November 9th of 2025, about hand-over and they've said that what I have done is sufficient.
    I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 98 days.
 
-  ## How was the app made:
+  # How was the app made:
    RecipeManager is made trough the Java SE, it uses Java Swing (in-built framework for GUI, part of the Java Fundation Classes), for Components and window that you see, it uses FlatLaf library for a Better, Modern Look & Feel to the users. Java's Sound API is involved to handle the Sounds. Action Handling/Additional Features for GUI comes from Java AWT (Abstract Window Tookit) 
   ### How it ended up:
    the app now has became mine, I still maintain it up to this day and improve it gradually.
  
-  **How to use RecipeManager:**<br/>
+  ##**How to use RecipeManager:**<br/>
     Make sure that you have a Latest JDK Installed -> Go to the Releases -> Download jar files there and run it.
     Tags can help you to relate older version of RecipeManager and new one.
-  ## License
+  ### License
 This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.
 
 * Demonstration: 👇
