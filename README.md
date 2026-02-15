@@ -1,8 +1,8 @@
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.jpg?raw=true" />
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.jpg?raw=true" />
 
-RecipeManager is a small, Java Swing/AWT based, FlatLaf-containing Desktop application which lets user to pick food, check their Recipes, possible Allergen content, and their nutritional information and unique features that come along with it. Code for this App is both complex and clean at the same time, After finishing this Project, I gained more experience.
-Idea for this App at the beggining came from one person who addressed sort of Java Helping group because they needed someone who would build an app for them before October 30, because that's a deadline time. On October 4th, I respectfully reach out to them and we both agreed to start a work, I finished the app even earlier at around October 27. However, this person has not contacted on October 30. But on November 9th, they have replied that what I have done is sufficient and how it would be perfect if I hand over the app. I did agree but I wanted to discuss details before handover so I send them a message, but they have not contacted at all for full 43 days (almost 44). Now I consider this Project finished.
+RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes and even request them.
+this Application provides a basic example of how Resturants can make simple anc clear UI for their users to order a specific food.
 
 * Demonstrational features 👇
 * Startup loading bar 📶:
@@ -16,5 +16,20 @@ Idea for this App at the beggining came from one person who addressed sort of Ja
 * Sneaky Close Button Effect 📕:
   ![gif alt](RecipeManager/images/close_button_effect.gif)
 
+  # History of the RecipeManager:
+   This development started in November of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
+   They had to build an App which lets users to behave like costumers to order a few food, But many helpers in group ignored their message for days and even didn't answer it for days.
+   I reached out to them respectfully and started Development in early-November and finished it 3 days until the Deadline, October 30nd of 2025.
+   But they have not reached out on that day, But They replied only on November 9th of 2025, about hand-over and they've said that what I have done is sufficient.
+   I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 98 days.
+
+  ## How was the app made:
+   RecipeManager is made trough the Java SE, it uses Java Swing (in-built framework for GUI, part of the Java Fundation Classes), for Components and window that you see, it uses FlatLaf library for a Better, Modern Look & Feel to the users. Java's Sound API is involved to handle the Sounds. Action Handling/Additional Features for GUI comes from Java AWT (Abstract Window Tookit) 
+  ### How it ended up:
+   the app now has became mine, I still maintain it up to this day and improve it gradually.
+ 
+  ** How to use RecipeManager: **:
+   Make sure that you have a Latest JDK Installed -> Go to the Releases -> Download jar files there and run it.
+   Tags can help you to relate older version of RecipeManager and new one.
   ## License
 This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.
