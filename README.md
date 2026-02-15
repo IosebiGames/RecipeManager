@@ -16,7 +16,7 @@ this Application provides a basic example of how Restaurants can make simple and
   ### How it ended up:
    the app now has became mine, I still maintain it up to this day and improve it gradually.
  
-  **How to use RecipeManager:**
+  **How to use RecipeManager:**<br/>
     Make sure that you have a Latest JDK Installed -> Go to 'Download' folder in the Repo -> navigate to release folders -> Download jar files there and run it.
     Tags can help you to relate older version of RecipeManager and new one.
   ### License
