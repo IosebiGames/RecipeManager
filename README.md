@@ -1,5 +1,6 @@
-RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes and even request them.
-this Application provides a basic example of how Resturants can make simple anc clear UI for their users to order a specific food.
+**RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes and even request them.
+this Application provides a basic example of how Restaurants can make simple and clear UI for their users to order a specific food.**
+
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.jpg?raw=true" />
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.jpg?raw=true" />
 
