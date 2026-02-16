@@ -35,3 +35,6 @@ This project is licensed under the GNU General Public License v3.0 (GPLv3) - see
   ![gif alt](RecipeManager/images/nutritional_info.gif)
 * Sneaky Close Button Effect 📕:
   ![gif alt](RecipeManager/images/close_button_effect.gif)
+
+  # RecipeManager development videos:
+  [https://youtu.be/3FQSAhvBGP8 ](https://www.youtube.com/)
