@@ -37,4 +37,5 @@ This project is licensed under the GNU General Public License v3.0 (GPLv3) - see
   ![gif alt](RecipeManager/images/close_button_effect.gif)
 
   # RecipeManager development videos:
-  [https://youtu.be/3FQSAhvBGP8 ](https://youtu.be/3FQSAhvBGP8)
+  - [RecepieManager App in Java | 28.10.2025](https://youtu.be/3FQSAhvBGP8)
+  - [RecipeManager | Full showcase](https://youtu.be/U4Fb3SS24gE)
