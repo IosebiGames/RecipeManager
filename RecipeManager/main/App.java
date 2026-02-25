@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import recipeSystem.MoreTab;
 import recipeSystem.RecipeHandler;
 import Tools.*;
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.*;
 
 public class App {
 	public Screen screen = new Screen();
@@ -130,3 +130,4 @@ public class App {
 	     });
 	}
 }
+
