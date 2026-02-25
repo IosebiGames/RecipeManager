@@ -17,60 +17,58 @@ public class RecipeHandler {
 		timer = new Timer(1000, _ -> {
 		     counter++;
 				if(counter == 20) {
-					app.labels[4].setText("");
-					app.labels[5].setText("");
-					app.labels[6].setText("");
-					app.labels[7].setText("");
-					app.labels[8].setText("");
-                    app.labels[10].setText("");
-                 	counter = 0;
-					allergenAmount = 0;
-					app.buttons[0].setEnabled(true);
-					app.buttons[1].setEnabled(true);
-                    app.buttons[2].setEnabled(true);
-                    app.buttons[4].setEnabled(true);
-                    app.buttons[3].setEnabled(true);
-                    app.buttons[6].setVisible(false);
-			  
-                    timer.stop();
+					    for(int i = 4; i <= 10; i++) {
+					    	app.labelList.get(i).setText("");
+					    	app.labelList.get(i-i+9).setText("Allergens:");
+					    }
+	                 	counter = 0;
+						allergenAmount = 0;
+						for(int i = 0; i <= 4; i++) {
+							app.buttonList.get(i).setEnabled(true);							
+						}
+	                    app.buttonList.get(6).setVisible(false);
+				  
+	                    timer.stop();
 				}
 		});
 		timer.start();
 		
-		app.buttons[0].addActionListener(_ -> {
+		app.buttonList.get(0).addActionListener(_ -> {
 			timer.start();
-			app.labels[4].setText("beef patty, bun, lettuce, tomato");
+			app.labelList.get(4).setText("beef patty, bun, lettuce, tomato");
 		    allergenAmount += 1; 
-			app.labels[10].setText("" + allergenAmount);
-			app.buttons[0].setEnabled(false);
-	        app.buttons[6].setVisible(true);
-	        app.buttons[6].addActionListener(_ -> {
-	        	app.mt.openMoreTab();
+		    app.labelList.get(10).setText("" + allergenAmount);
+			app.buttonList.get(0).setEnabled(false);
+	        app.buttonList.get(6).setVisible(true);
+	        app.buttonList.get(6).addActionListener(e -> {
+	        	if(e.getSource() == app.buttonList.get(6)) {
+	        		app.mt.openMoreTab();
+	        	}
 	        });
 		});
-		app.buttons[1].addActionListener(_ -> {
-			app.labels[5].setText("beef, salt, pepper, garlic");
+		app.buttonList.get(1).addActionListener(_ -> {
+			app.labelList.get(5).setText("beef, salt, pepper, garlic");
 			allergenAmount +=1;
-			app.labels[10].setText("" + allergenAmount);
-			app.buttons[1].setEnabled(false);
+			app.labelList.get(10).setText("" + allergenAmount);
+			app.buttonList.get(1).setEnabled(false);
 		});
-		app.buttons[2].addActionListener(_ -> {
-			app.labels[6].setText("milk, cream, sugar, egg yolks");
+		app.buttonList.get(2).addActionListener(_ -> {
+			app.labelList.get(6).setText("milk, cream, sugar, egg yolks");
 			allergenAmount +=1;
-			app.labels[10].setText("" + allergenAmount);
-			app.buttons[2].setEnabled(false);
+			app.labelList.get(10).setText("" + allergenAmount);
+			app.buttonList.get(2).setEnabled(false);
 		});
-		app.buttons[4].addActionListener(_ -> {
-			app.labels[7].setText("tomato, olive oil, salt, vinegar");
+		app.buttonList.get(4).addActionListener(_ -> {
+			app.labelList.get(7).setText("tomato, olive oil, salt, vinegar");
 			allergenAmount +=1;
-			app.labels[10].setText("" + allergenAmount);
-			app.buttons[4].setEnabled(false);
+			app.labelList.get(10).setText("" + allergenAmount);
+			app.buttonList.get(4).setEnabled(false);
 		});
-		app.buttons[3].addActionListener(_ -> {
-			app.labels[8].setText("mayonnaise, celery, lettuce");
+		app.buttonList.get(3).addActionListener(_ -> {
+			app.labelList.get(8).setText("mayonnaise, celery, lettuce");
 			allergenAmount +=1;
-			app.labels[10].setText("" + allergenAmount);
-			app.buttons[3].setEnabled(false);
+			app.labelList.get(10).setText("" + allergenAmount);
+			app.buttonList.get(3).setEnabled(false);
 		});			
 	}
 	public void writeAllergen(String fileName, String Allergen) {
@@ -81,10 +79,10 @@ public class RecipeHandler {
 			IO.println("Can't write Allergen: " + e.getMessage());
 		}
 	}
-	public void writeRecipe(String fileName, String recipe) {
+	public void writeRecipe(String fileName, String recipie) {
 		try {
 			System.setOut(new PrintStream(fileName));
-			System.out.println(recipe);
+			System.out.println(recipie);
 		}catch(IOException e) {
 			IO.println("Can't write Recipe: " + e.getMessage());
 		}
