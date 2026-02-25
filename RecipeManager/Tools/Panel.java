@@ -10,9 +10,9 @@ public class Panel {
 	public Panel(Screen s) {
 		this.screen = s;
 	}
-	public void createPanel(JPanel panel, int[] panelBounds, boolean focusableStatus) {
+	public void createPanel(JPanel panel, Rectangle rect, boolean focusableStatus) {
 		panel.setLayout(null);
-		panel.setBounds(panelBounds[0], panelBounds[1], panelBounds[2], panelBounds[3]);
+		panel.setBounds(rect.getBounds());
 		panel.setFocusable(focusableStatus);
 	    addBorder(panel);
 	    screen.window.add(panel);
