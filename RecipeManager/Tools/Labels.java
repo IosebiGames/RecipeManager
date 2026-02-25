@@ -2,6 +2,8 @@ package Tools;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Rectangle;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -11,8 +13,8 @@ public class Labels {
 	public Labels(Screen s) {
 		this.screen = s;
 	}
-	public void createLabel(JLabel label, Font font, Color foregroundColor, int[] labelBounds, boolean focusableStatus, JPanel partPanel) {
-		label.setBounds(labelBounds[0], labelBounds[1], labelBounds[2], labelBounds[3]);
+	public void createLabel(JLabel label, Font font, Color foregroundColor, Rectangle rect, boolean focusableStatus, JPanel partPanel) {
+		label.setBounds(rect.getBounds());
 		label.setFocusable(focusableStatus);
 		label.setForeground(foregroundColor);
 		label.setFont(font);
