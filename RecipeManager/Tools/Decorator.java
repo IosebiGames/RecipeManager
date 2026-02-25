@@ -10,6 +10,7 @@ import main.App;
 import sound.Sound;
 
 public class Decorator implements java.awt.event.ActionListener {
+
     private App app;
     private boolean showingNext = false;
     private Timer imageTimer;
@@ -32,14 +33,18 @@ public class Decorator implements java.awt.event.ActionListener {
         this.rl = new ResourceLoader();
     }
     public void decorate() throws IOException {
+        Burgerpick.setEnabled(true);
     	Burgerpick.setFocusable(false);
         Burgerpick.setBackground(Color.white);
         Burgerpick.setForeground(Color.black);
         Burgerpick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    addings += 60;
-			    Burgerpick.setEnabled(false);
-			    app.labels[12].setText("" + addings);
+				if(e.getSource()==Burgerpick) {
+					addings += 60;
+					Burgerpick.setText("Selecting more than once is disallowed, product is too expensive.");
+					app.labelList.get(12).setText("" + addings);
+                    Burgerpick.setEnabled(false);					
+				}
 			}        	
         });
         Drinkpick.setFocusable(false);
@@ -47,8 +52,10 @@ public class Decorator implements java.awt.event.ActionListener {
         Drinkpick.setForeground(Color.black);
         Drinkpick.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			    addings += 90;
-			    app.labels[12].setText("" + addings);
+			    if(e.getSource()==Drinkpick) {
+			    	addings += 90;
+			    	app.labelList.get(12).setText("" + addings);
+			    }
 			}        	
         });
         popup1.add(Burgerpick);
@@ -57,33 +64,34 @@ public class Decorator implements java.awt.event.ActionListener {
         popup2.add(Drinkpick);
         popup2.setFocusable(false);
         
-        app.labels[2].setToolTipText("Burgers");
-        app.labels[2].setIcon(new ImageIcon(rl.getImage("/images/Burger.png")));
-        app.labels[2].setBorder(BorderFactory.createLineBorder(Color.black));
-        app.labels[2].setComponentPopupMenu(popup1);
-        app.labels[1].setToolTipText("Salads");
-        app.labels[1].setIcon(new ImageIcon(rl.getImage("/images/TomatoSalad.png")));
-        app.labels[1].setBorder(BorderFactory.createLineBorder(Color.black));
-        app.labels[1].setComponentPopupMenu(popup2);
-        app.buttons[5].addActionListener(this);
+        app.labelList.get(2).setToolTipText("Burgers");
+        app.labelList.get(2).setIcon(new ImageIcon(rl.getImage("/images/Burger.png")));
+        app.labelList.get(2).setBorder(BorderFactory.createLineBorder(Color.black));
+        app.labelList.get(2).setComponentPopupMenu(popup1);
+        app.labelList.get(1).setToolTipText("Salads");
+        app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/TomatoSalad.png")));
+        app.labelList.get(1).setBorder(BorderFactory.createLineBorder(Color.black));
+        app.labelList.get(1).setComponentPopupMenu(popup2);
+        app.buttonList.get(5).addActionListener(this);
     }
     public void actionPerformed(ActionEvent e) {
-    	if (e.getSource() == app.buttons[5]) {
+    	if (e.getSource() == app.buttonList.get(5)) {
+		    Burgerpick.setText("Pick (60$)");
     		Burgerpick.setEnabled(true);
         	if (!showingNext) {
         		try {
-					app.labels[2].setIcon(new ImageIcon(rl.getImage("/images/Steak.png")));
+        			app.labelList.get(2).setIcon(new ImageIcon(rl.getImage("/images/Steak.png")));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
                 try {
-					app.labels[1].setIcon(new ImageIcon(rl.getImage("/images/ChickenSalad.png")));
+                	app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/ChickenSalad.png")));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
-                app.labels[2].setToolTipText("Steak");
-                app.labels[1].setToolTipText("Chicken Salad");
-                app.buttons[5].setText("Back");
+                app.labelList.get(2).setToolTipText("Steak");
+                app.labelList.get(1).setToolTipText("Chicken Salad");
+                app.buttonList.get(5).setText("Back");
                 showingNext = true;
                 
                 counter = 0;
@@ -93,19 +101,19 @@ public class Decorator implements java.awt.event.ActionListener {
                         counter++;
                         if (counter == 5) {
                             try {
-								app.labels[1].setIcon(new ImageIcon(rl.getImage("/images/IceCream.png")));
+                            	app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/IceCream.png")));
 							} catch (IOException ex) {
 								ex.printStackTrace();
 							}
-                            app.labels[1].setToolTipText("Ice Cream");
+                            app.labelList.get(1).setToolTipText("Ice Cream");
                         }
                         if (counter == 12) {
                             try {
-								app.labels[1].setIcon(new ImageIcon(rl.getImage("/images/ChickenSalad.png")));
+                            	app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/ChickenSalad.png")));
 							} catch (IOException ex) {
 								ex.printStackTrace();
 							}
-                            app.labels[1].setToolTipText("Chicken Salad");
+                            app.labelList.get(1).setToolTipText("Chicken Salad");
                             counter = 0; 
                         }
                         sound.playSound();
@@ -113,20 +121,20 @@ public class Decorator implements java.awt.event.ActionListener {
                 });
                 imageTimer.start();
             } else {
-            	Burgerpick.setEnabled(false);
+            	Burgerpick.setEnabled(true);
                 try {
-					app.labels[2].setIcon(new ImageIcon(rl.getImage("/images/Burger.png")));
+                	app.labelList.get(2).setIcon(new ImageIcon(rl.getImage("/images/Burger.png")));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
                 try {
-					app.labels[1].setIcon(new ImageIcon(rl.getImage("/images/TomatoSalad.png")));
+                	app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/TomatoSalad.png")));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
-                app.labels[2].setToolTipText("Burgers");
-                app.labels[1].setToolTipText("Salads");
-                app.buttons[5].setText("Next");
+                app.labelList.get(2).setToolTipText("Burgers");
+                app.labelList.get(1).setToolTipText("Salads");
+                app.buttonList.get(5).setText("Next");
                 showingNext = false;
                 
                 if (imageTimer != null) {
@@ -137,4 +145,3 @@ public class Decorator implements java.awt.event.ActionListener {
         }
     }
 }
-
