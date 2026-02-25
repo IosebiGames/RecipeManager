@@ -1,118 +1,114 @@
 package main;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.io.IOException;
-
-import Tools.*;
-import Tools.Button;
-import Tools.Panel;
+import java.util.ArrayList;
 import recipeSystem.MoreTab;
 import recipeSystem.RecipeHandler;
-
+import Tools.*;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 public class App {
-	public Screen screen;
-	private Seperators sp;
-	private Labels lb;
-	private TextBox tb;
-	private Panel panel;
-	private Button button;
-	private Decorator dec;
-	private RecipeHandler rh;
-    public MoreTab mt;
-    public Bounds b;
-    public JLabel[] labels = {
-			new JLabel("Foods & Drinks"), 
-			new JLabel(""), 
-			new JLabel(""), 
-			new JLabel("Recipes"),
-			new JLabel(""),
-			new JLabel(""),
-			new JLabel(""), 
-			new JLabel(""), 
-			new JLabel(""), 
-			new JLabel("Allergens:"),
-			new JLabel(""),
-			new JLabel("Total Sum:"),
-			new JLabel(""),
-			new JLabel(""), 
-			new JLabel(""),
-			new JLabel(""),
-			new JLabel(""), 
-			new JLabel(""), 
-			new JLabel("")
-	};
-	public JButton[] buttons = {
-			new JButton("Burgers:"),
-			new JButton("Steak:"),
-			new JButton("Ice-Cream:"),
-			new JButton("Chicken Salad:"),
-			new JButton("Tomato Salad:"),
-			new JButton("Next"),
-			new JButton("More")
-	};
-	public JPanel[] panels = {
-			new JPanel(),
-			new JPanel(),
-			new JPanel(),
-			new JPanel(),
-			new JPanel(),
-	};
-	public Font[] fonts = {
-		new Font("Tahoma", Font.BOLD, 2),
-		new Font("Sitka Text", Font.BOLD, 31),
-		new Font("Trebuchet MS", Font.BOLD, 18),
-	};
-	{
-		screen = new Screen();
-		sp = new Seperators(screen);
-		lb = new Labels(screen);
-		tb = new TextBox(this);
-		panel = new Panel(screen);
-		button = new Button();
-		dec = new Decorator(this);
-		rh = new RecipeHandler(this);
-		mt = new MoreTab(this);
-        b = new Bounds();
-	}
+	public Screen screen = new Screen();
+	public Seperators sp = new Seperators(screen);
+	public Labels lb = new Labels(screen);
+	public TextBox tb = new TextBox(this);
+	public MoreTab mt = new MoreTab(this);
+    public Bounds b = new Bounds();
+    private Panel panel = new Panel(screen);
+    private Button button = new Button();
+    private Decorator dec = new Decorator(this);
+    private RecipeHandler rh = new RecipeHandler(this);
+    
+    public ArrayList<JLabel> labelList = new ArrayList<>();
+    public ArrayList<JButton> buttonList = new ArrayList<>();
+    public ArrayList<JPanel> panelList = new ArrayList<>();
+    public ArrayList<Font> FontList = new ArrayList<>();
+    
 	public App() { 
+		labelList.add(new JLabel("Foods & Drinks"));
+		labelList.add(new JLabel(""));
+		labelList.add(new JLabel(""));
+		labelList.add(new JLabel("Recipes"));
+		labelList.add(new JLabel(""));
+		labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel("Allergens:"));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel("Total Sum:"));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel("")); 
+        labelList.add(new JLabel(""));
+        labelList.add(new JLabel(""));
+		
+		buttonList.add(new JButton("Burgers:"));
+		buttonList.add(new JButton("Steak:"));
+		buttonList.add(new JButton("Ice-Cream:"));
+		buttonList.add(new JButton("Chicken Salad:"));
+		buttonList.add(new JButton("Tomato Salad:"));
+		buttonList.add(new JButton("Next"));
+		buttonList.add(new JButton("More"));
+
+		panelList.add(new JPanel());
+		panelList.add(new JPanel());
+		panelList.add(new JPanel());
+		panelList.add(new JPanel());
+		panelList.add(new JPanel());
+	
+		FontList.add(new Font("Tahoma", Font.BOLD, 2));
+		FontList.add(new Font("Sitka Text", Font.BOLD, 31));
+		FontList.add(new Font("Trebuchet MS", Font.BOLD, 18));
+	
 		screen.createWindow();
 
-		panel.createPanel(panels[0], Bounds.foodPanelBounds, false);
-		panel.createPanel(panels[1], Bounds.recipePanelBounds, false);
-		panel.createPanel(panels[2], Bounds.allergenPanelBounds, false);
-		panel.createPanel(panels[3], Bounds.sumPanelBounds, false);
-		panel.createPanel(panels[4], Bounds.InformationPanelBounds, false);
+		panel.createPanel(panelList.get(0), new Bounds(0, 0, 338, 256).getBounds(), false);
+		panel.createPanel(panelList.get(1), new Bounds(450, 0, 338, 256).getBounds(), false); 
+		panel.createPanel(panelList.get(2), new Bounds(450, 256, 338, 189).getBounds(), false);
+		panel.createPanel(panelList.get(3), new Bounds(0, 378, 338, 67).getBounds(), false);
+		panel.createPanel(panelList.get(4), new Bounds(0, 256, 338, 122).getBounds(), false); 
 		
-		lb.createLabel(labels[0], fonts[1], Color.yellow, Bounds.foodsLabelBounds, false, panels[0]);
-		lb.createLabel(labels[1], null, null, Bounds.DrinkLabelBounds, false, panels[0]);
-		lb.createLabel(labels[2], null, null, Bounds.burgerLabelBounds, false, panels[0]);
-		lb.createLabel(labels[3], fonts[1], Color.green, Bounds.recipesLabelBounds, false, panels[1]);
-		lb.createLabel(labels[4], null, null, Bounds.burgerFieldLabelBounds, false, panels[1]);
-		lb.createLabel(labels[5], null, null, Bounds.DrinkFieldLabelBounds, false, panels[1]);
-		lb.createLabel(labels[6], null, null, Bounds.IceCreamFieldLabelBounds, false, panels[1]);
-		lb.createLabel(labels[7],null, null, Bounds.TomatoSaladFieldBounds, false, panels[1]);
-		lb.createLabel(labels[8], null, null, Bounds.ChickenSaladFieldBounds, false, panels[1]);
-		lb.createLabel(labels[9], fonts[1], Color.red, Bounds.allergenLabelBounds, false, panels[2]);
-		lb.createLabel(labels[10], null, null, Bounds.AllergenAmountLabelBounds, false, panels[2]);
-		lb.createLabel(labels[11], fonts[1], Color.blue, Bounds.totalSumLabelBounds, false, panels[3]);
-		lb.createLabel(labels[12], fonts[2], Color.blue, Bounds.SumNumberLabelBounds, false, panels[3]);
+		lb.createLabel(labelList.get(0), FontList.get(1), Color.yellow, new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(1), null, null, new Bounds(187, 64, 151, 144).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 64, 151, 144).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(3), FontList.get(1), Color.green, new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(4), null, null, new Bounds(104, 99, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(5), null, null, new Bounds(104, 128, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(6), null, null, new Bounds( 109, 157, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(7),null, null, new Bounds(140, 213, 166, 23).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(8), null, null, new Bounds( 140, 183, 166, 23).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(9), FontList.get(1), Color.red, new Bounds(93, 11, 210, 54).getBounds(), false, panelList.get(2));
+		lb.createLabel(labelList.get(10), null, null, new Bounds(93, 63, 145, 14).getBounds(), false, panelList.get(2));
+		lb.createLabel(labelList.get(11), FontList.get(1), Color.blue, new Bounds(86, 0, 171, 40).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(12), FontList.get(2), Color.blue, new Bounds( 96, 38, 133, 14).getBounds(), false, panelList.get(3));
 		
-		button.createButton(buttons[0], Bounds.burgersButtonBounds, false, Color.white, Color.black, panels[1], true);
-		button.createButton(buttons[1], Bounds.drinksButtonBounds, false, Color.white, Color.black, panels[1], true);
-		button.createButton(buttons[2], Bounds.IceCreamButtonBounds, false, Color.white, Color.black, panels[1], true);
-		button.createButton(buttons[3], Bounds.ChickenSaladButtonBounds, false, Color.white, Color.black, panels[1], true);
-		button.createButton(buttons[4], Bounds.TomatoSaladButtonBounds, false, Color.white, Color.black, panels[1], true);
-		button.createButton(buttons[5], Bounds.NextButtonBounds, false, Color.white, Color.black, panels[0], true);
-		button.createButton(buttons[6], Bounds.MoreButtonBounds, false, Color.white, Color.black, panels[2], false);
+		button.createButton(buttonList.get(0), new Bounds(10, 93, 86, 23).getBounds(), false, panelList.get(1), true);
+		button.createButton(buttonList.get(1), new Bounds(10, 124, 86, 23).getBounds(), false, panelList.get(1), true);
+		button.createButton(buttonList.get(2), new Bounds(10, 153, 96, 23).getBounds(), false, panelList.get(1), true);
+		button.createButton(buttonList.get(3), new Bounds(10, 183, 126, 23).getBounds(), false, panelList.get(1), true);
+		button.createButton(buttonList.get(4), new Bounds(10, 213, 126, 23).getBounds(), false, panelList.get(1), true);
+		button.createButton(buttonList.get(5), new Bounds(120, 214, 130, 40).getBounds(), false, panelList.get(0), true);
+		button.createButton(buttonList.get(6), new Bounds(113, 133, 210, 40).getBounds(), false, panelList.get(2), false);
 		
-		sp.createSeperator(labels[13], Color.black, fonts[0], Bounds.seperator1Bounds, true);
-		sp.createSeperator(labels[14], Color.black, fonts[0], Bounds.seperator2Bounds, true);
-		sp.createSeperator(labels[15], Color.black, fonts[0], Bounds.seperator3Bounds, true);
-		sp.createSeperator(labels[16], Color.black, fonts[0], Bounds.seperator4Bounds, true);
-		sp.createSeperator(labels[17], Color.black, fonts[0], Bounds.seperator5Bounds, true);
+		for(int i = 0; i <= 6; i++) {
+			buttonList.get(i).setBackground(Color.white);
+			buttonList.get(i).setForeground(Color.black);
+		}
+		for(int i = 13; i <= 17; i++) {
+			labelList.get(i).setBackground(Color.black);
+		    labelList.get(i).setFont(FontList.get(i-i));
+		}
+		sp.createSeperator(labelList.get(13), new Bounds(338, 26, 115, 42).getBounds(), true);
+		sp.createSeperator(labelList.get(14), new Bounds(338, 116, 115, 42).getBounds(), true);
+		sp.createSeperator(labelList.get(15), new Bounds(338, 214, 115, 42).getBounds(), true);
+		sp.createSeperator(labelList.get(16), new Bounds(338, 296, 115, 42).getBounds(), true);
+		sp.createSeperator(labelList.get(17), new Bounds(338, 378, 115, 42).getBounds(), true);
 		
 	    try {
 			dec.decorate();
@@ -134,4 +130,3 @@ public class App {
 	     });
 	}
 }
-
