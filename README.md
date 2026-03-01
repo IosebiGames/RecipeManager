@@ -2,7 +2,7 @@
 this Application provides a basic example of how Restaurants can make simple and clear UI for their users to order a specific food.**
 
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
-<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.jpg?raw=true" />
+<img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.png?raw=true" />
 
   # History of the RecipeManager:
    This development started in November of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
