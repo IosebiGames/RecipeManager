@@ -32,7 +32,7 @@ public class StartupScreen {
 		e.printStackTrace();
      }
 
-       bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true);
+       bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Roboto", Font.BOLD, 15));
      
        timer = new Timer(100, new ActionListener() {
     	   public void actionPerformed(ActionEvent e) {
@@ -60,7 +60,7 @@ public class StartupScreen {
 	private void setIcon(ImageIcon icon) {
 		window.setIconImage(icon.getImage());
     }
-	private JProgressBar createBar(String text, int value, boolean visible, Rectangle rect, Color bc, Color fg, JFrame window, boolean focusable, boolean extrab) {
+	private JProgressBar createBar(String text, int value, boolean visible, Rectangle rect, Color bc, Color fg, JFrame window, boolean focusable, boolean extrab, Font f) {
 		 bar = new JProgressBar();
 		 bar.setFocusable(focusable);
 		 bar.setValue(value);
@@ -69,6 +69,7 @@ public class StartupScreen {
 		 bar.setBackground(bc);
 		 bar.setForeground(fg);
 		 bar.setStringPainted(extrab);
+		 bar.setFont(f);
 		 window.add(bar);
 		 return bar;
 	}
