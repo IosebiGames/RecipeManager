@@ -120,6 +120,9 @@ public class App {
 	    tb.validate(); 
 	}
 	public static void main(String[] args) {
+	      UserRuntime();
+	}
+	private static void UserRuntime() {
 	      javax.swing.SwingUtilities.invokeLater(() -> {
 	    	  try {
 	    		  UIManager.setLookAndFeel(new FlatDarkLaf());
@@ -129,5 +132,14 @@ public class App {
 			 new startup.StartupScreen().timer.start();
 	     });
 	}
+	private static void DeveloperRuntime() {
+		javax.swing.SwingUtilities.invokeLater(() -> {
+	    	  try {
+	    		  UIManager.setLookAndFeel(new FlatDarkLaf());
+	    	  } catch (UnsupportedLookAndFeelException e) {
+	    		  System.out.println("Failed to load Look and Feel: " + e.getMessage());
+	    	  }
+			 new App();
+	     });
+	}
 }
-
