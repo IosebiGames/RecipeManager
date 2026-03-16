@@ -119,7 +119,6 @@ public class MoreTab {
 		    	buttonList.get(0).setEnabled(true); 
 		    	displayInfo("Calories:", "Possible Vitamins:", "Protein:", "Sodium", "Water Content:", "Fat:", "Allergens:", "Product:");
 			   	window.dispose();
-		    	s.playSound();
 		});
 		for(int labelIndex = 1; labelIndex <= 7; labelIndex++) {
 			PanelList.get(labelIndex-labelIndex).add(labelList.get(1));
