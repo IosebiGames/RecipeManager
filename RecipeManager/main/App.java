@@ -85,8 +85,8 @@ public class App {
 		lb.createLabel(labelList.get(8), null, null, new Bounds( 140, 183, 166, 23).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(9), FontList.get(1), Color.red, new Bounds(93, 11, 210, 54).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(10), null, null, new Bounds(93, 63, 145, 14).getBounds(), false, panelList.get(2));
-		lb.createLabel(labelList.get(11), FontList.get(1), Color.blue, new Bounds(86, 0, 171, 40).getBounds(), false, panelList.get(3));
-		lb.createLabel(labelList.get(12), FontList.get(2), Color.blue, new Bounds( 96, 38, 133, 14).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(11), FontList.get(1), new Color(255, 195, 51), new Bounds(86, 5, 171, 40).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(12), FontList.get(2), new Color(255, 192, 51), new Bounds( 96, 38, 133, 14).getBounds(), false, panelList.get(3));
 		
 		button.createButton(buttonList.get(0), new Bounds(10, 93, 86, 23).getBounds(), false, panelList.get(1), true);
 		button.createButton(buttonList.get(1), new Bounds(10, 124, 86, 23).getBounds(), false, panelList.get(1), true);
