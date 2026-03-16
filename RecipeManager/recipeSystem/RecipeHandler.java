@@ -1,8 +1,10 @@
 package recipeSystem;
 
 import javax.swing.*;
+
 import java.io.*;
 import main.App;
+import java.awt.event.ActionListener;
 
 public class RecipeHandler {
 
@@ -40,10 +42,12 @@ public class RecipeHandler {
 		    app.labelList.get(10).setText("" + allergenAmount);
 			app.buttonList.get(0).setEnabled(false);
 	        app.buttonList.get(6).setVisible(true);
-	        app.buttonList.get(6).addActionListener(e -> {
-	        	if(e.getSource() == app.buttonList.get(6)) {
+	        
+	        for(ActionListener al : app.buttonList.get(6).getActionListeners()) {
+	        	app.buttonList.get(6).removeActionListener(al);
+	        }
+	        app.buttonList.get(6).addActionListener(_ -> {
 	        		app.mt.openMoreTab();
-	        	}
 	        });
 		});
 		app.buttonList.get(1).addActionListener(_ -> {
