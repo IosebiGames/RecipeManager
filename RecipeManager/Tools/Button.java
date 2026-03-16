@@ -6,6 +6,7 @@ import java.awt.event.*;
 import sound.Sound;
 
 public class Button {
+	
 	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
@@ -13,11 +14,12 @@ public class Button {
         b.putClientProperty("JButton.buttonType", "roundRect");
         b.putClientProperty("FlatLaf.background", Color.white);
         b.putClientProperty("FlatLaf.foreground", Color.black);
-        b.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			    new Sound().playSound();	
-			}        
-        });
+        
+        for (ActionListener al : b.getActionListeners()) {
+            b.removeActionListener(al);
+        }
+        b.addActionListener(_ -> new Sound().playSound());
+        
         panel.add(b);
 	}
 	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
