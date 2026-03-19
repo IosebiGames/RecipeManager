@@ -2,6 +2,8 @@ package recipeSystem;
 
 import javax.swing.*;
 
+import Tools.Screen;
+
 import java.io.*;
 import main.App;
 import java.awt.event.ActionListener;
@@ -11,11 +13,13 @@ public class RecipeHandler {
 	private App app;
 	private int counter = 0, allergenAmount = 0;
 	private Timer timer;
+	private Screen screen;
 	
 	public RecipeHandler(App app) {
 		this.app = app;
 	}
 	public void startRecipeSystem() {
+		screen = new Screen();
 		timer = new Timer(1000, _ -> {
 		     counter++;
 				if(counter == 20) {
@@ -48,6 +52,10 @@ public class RecipeHandler {
 	        }
 	        app.buttonList.get(6).addActionListener(_ -> {
 	        		app.mt.openMoreTab();
+	                app.buttonList.get(6).setVisible(false);		
+			    	for(JButton b : app.buttonList) {
+			    		b.setEnabled(false);
+			    	}
 	        });
 		});
 		app.buttonList.get(1).addActionListener(_ -> {
