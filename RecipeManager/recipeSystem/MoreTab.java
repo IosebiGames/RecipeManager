@@ -21,6 +21,7 @@ public class MoreTab {
     private App app;
     private Panel p;
     private RecipeHandler rh;
+    private Screen screen;
 	private Labels l;
 	private Button b = new Button();
 	private ResourceLoader rl = new ResourceLoader();
@@ -39,6 +40,7 @@ public class MoreTab {
 		p = new Panel(app.screen);
 		l = new Labels(app.screen);
 		rh = new RecipeHandler(app);
+	    screen = new Screen();
 	}
 	public void openMoreTab() {
 		labelList.add(new JLabel("Product:"));
@@ -118,7 +120,10 @@ public class MoreTab {
 		buttonList.get(1).addActionListener(_ -> {
 		    	buttonList.get(0).setEnabled(true); 
 		    	displayInfo("Calories:", "Possible Vitamins:", "Protein:", "Sodium", "Water Content:", "Fat:", "Allergens:", "Product:");
-			   	window.dispose();
+		    	for(JButton b : app.buttonList) {
+		    		b.setEnabled(true);
+		    	}
+		    	window.dispose();
 		});
 		for(int labelIndex = 1; labelIndex <= 7; labelIndex++) {
 			PanelList.get(labelIndex-labelIndex).add(labelList.get(1));
