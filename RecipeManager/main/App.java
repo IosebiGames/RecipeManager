@@ -120,26 +120,27 @@ public class App {
 	    tb.validate(); 
 	}
 	public static void main(String[] args) {
-	      UserRuntime();
+	     SwitchRuntime("User Runtime");
 	}
-	private static void UserRuntime() {
-	      javax.swing.SwingUtilities.invokeLater(() -> {
-	    	  try {
-	    		  UIManager.setLookAndFeel(new FlatDarkLaf());
-	    	  } catch (UnsupportedLookAndFeelException e) {
-	    		  System.out.println("Failed to load Look and Feel: " + e.getMessage());
-	    	  }
-			 new startup.StartupScreen().timer.start();
-	     });
-	}
-	private static void DeveloperRuntime() {
-		javax.swing.SwingUtilities.invokeLater(() -> {
-	    	  try {
-	    		  UIManager.setLookAndFeel(new FlatDarkLaf());
-	    	  } catch (UnsupportedLookAndFeelException e) {
-	    		  System.out.println("Failed to load Look and Feel: " + e.getMessage());
-	    	  }
-			 new App();
-	     });
-	}
-}
+	private static void SwitchRuntime(String RuntimeType) {
+		  javax.swing.SwingUtilities.invokeLater(() -> {
+			if(RuntimeType.equals("User Runtime") || RuntimeType.equals("User Runtime".toLowerCase())) {
+				try {
+				    UIManager.setLookAndFeel(new FlatDarkLaf());
+					new startup.StartupScreen().timer.start();
+			     }catch(UnsupportedLookAndFeelException e) {
+			    		System.out.println("Failed: " + e.getMessage());  
+			      }
+				  }else if(RuntimeType.equals("Developer Runtime") || RuntimeType.equals("Developer Runtime".toLowerCase())) {
+				        try {
+						 UIManager.setLookAndFeel(new FlatDarkLaf());
+						 new App();
+					    }catch(UnsupportedLookAndFeelException e) {
+					    	System.out.println("Failed: " + e.getMessage());
+					   }
+				  }else {
+					  throw new RuntimeException("Invalid Runtime Type.");
+				  }
+			  });
+    	   }
+	 }
