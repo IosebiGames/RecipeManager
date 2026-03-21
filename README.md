@@ -5,16 +5,17 @@ this Application provides a basic example of how Restaurants can make simple and
 <img width="3072" height="1946" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.png?raw=true" />
 
   # History of the RecipeManager:
-   This development started in November of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
-   They had to build an App which lets users to behave like costumers to order a few food, But many helpers in group ignored their message for days and even didn't answer it for days.
-   I reached out to them respectfully and started Development in early-November and finished it 3 days until the Deadline, October 30nd of 2025.
+   This development started in Early October of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
+   They had to build an App which lets users to choose a few foods, But many helpers in group ignored their message for days and even didn't answer it for days.
+   I reached out to them respectfully and I started Development after we agreed and finished it 3 days early (October 27th) until the Deadline, October 30nd of 2025.
    But they have not reached out on that day, But They replied only on November 9th of 2025, about hand-over and they've said that what I have done is sufficient.
-   I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 98 days.
+   I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 132 days.
 
   # How was the app made:
    RecipeManager is made trough the Java SE, it uses Java Swing (in-built framework for GUI, part of the Java Fundation Classes), for Components and window that you see, it uses FlatLaf library for a Better, Modern Look & Feel to the users. Java's Sound API is involved to handle the Sounds. Action Handling/Additional Features for GUI comes from Java AWT (Abstract Window Tookit) 
   ### How it ended up:
-   the app now has became mine, I still maintain it up to this day and improve it gradually.
+   the app now has became mine, I still maintain it up to this day and improve it gradually. The Source code isn't being shared with them and Last Development video link which
+   I provided to them through Mediafire is expired.
  
   **How to use RecipeManager:**<br/>
     Make sure that you have a Latest JDK Installed -> Go to 'Download' folder in the Repo -> navigate to release folders -> Download jar files there and run it.
