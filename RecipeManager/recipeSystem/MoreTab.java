@@ -15,6 +15,7 @@ import main.App;
 import sound.Sound;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 
 public class MoreTab {
 	private JFrame window;
@@ -118,12 +119,22 @@ public class MoreTab {
             }
 		});
 		buttonList.get(1).addActionListener(_ -> {
-		    	buttonList.get(0).setEnabled(true); 
+		    	buttonList.get(0).setEnabled(false); 
 		    	displayInfo("Calories:", "Possible Vitamins:", "Protein:", "Sodium", "Water Content:", "Fat:", "Allergens:", "Product:");
 		    	for(JButton b : app.buttonList) {
-		    		b.setEnabled(true);
+		    		if(rh.timer.isRunning() != true) {
+		    			b.setEnabled(false);
+		    			window.dispose();
+		    			buttonList.get(0).setEnabled(true); 
+		    			return;
+		    		}else {
+		    			if(rh.timer.isRunning() != false) {
+		    	 			b.setEnabled(true);
+			    			window.dispose();
+			    			return;			
+		    			}
+		    		}
 		    	}
-		    	window.dispose();
 		});
 		for(int labelIndex = 1; labelIndex <= 7; labelIndex++) {
 			PanelList.get(labelIndex-labelIndex).add(labelList.get(1));
