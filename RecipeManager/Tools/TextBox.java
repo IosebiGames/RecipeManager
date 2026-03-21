@@ -25,16 +25,16 @@ public class TextBox {
 		textPane.setFocusable(false);
 		textPane.setEnabled(false);
 		textPane.setText("                                     What's New:" +
-				"\n                                     - Fixed Sound Bugs\n                                     - Fixed Window Bugs\n                                     - Disabled Update Tracker System \n\n  Released: 16.03.2026\n  Version: 1.3v");
+				"\n                                     - Background Bug Fixes\n                                     - Improved Logic Safety\n                                     - Fixed Coloring Bug \n\n  Released: 21.03.2026\n  Version: 1.4v");
 		textPane.setBorder(BorderFactory.createLineBorder(Color.black));
 		app.panelList.get(4).add(textPane);
 		
 		if(new Date().getDate() > 27) {
 			textPane.setText("                                     What's New:" +
-					"\n                                     - Fixed Sound Bugs\n                                     - Fixed Window Bugs\n                                     - Disabled Update Tracker System \n\n  Released: 16.03.2026 " + "(Disabled)" + "\n  Version: 1.3v");
+					"\n                                     - Background Bug Fixes\n                                     - Improved Logic Safety\n                                     - Fixed Coloring Bug \n\n  Released: 21.03.2026 " + "(Disabled)" + "\n  Version: 1.4v");
 		}else {
 			textPane.setText("                                     What's New:" +
-					"\n                                     - Fixed Sound Bugs\n                                     - Fixed Window Bugs\n                                     - Disabled Update Tracker System \n\n  Released: 16.03.2026 (" + "Disabled)" + "\n  Version: 1.3v");	
+					"\n                                     - Background Bug Fixes\n                                     - Improved Logic Safety\n                                     - Fixed Coloring Bug \n\n  Released: 21.03.2026 (" + "Disabled)" + "\n  Version: 1.4v");	
 		}
 	}
 }
