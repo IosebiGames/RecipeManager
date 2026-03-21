@@ -9,35 +9,35 @@ import main.App;
 import java.awt.event.ActionListener;
 
 public class RecipeHandler {
-
 	private App app;
 	private int counter = 0, allergenAmount = 0;
-	private Timer timer;
+	public Timer timer;
 	private Screen screen;
 	
 	public RecipeHandler(App app) {
 		this.app = app;
+		timer = new Timer(1000, _ -> {
+			counter++;
+			if(counter == 20) {
+				for(int i = 4; i <= 10; i++) {
+					app.labelList.get(i).setText("");
+					app.labelList.get(i-i+9).setText("Allergens:");
+					app.buttonList.get(5).setEnabled(true);
+					app.buttonList.get(6).setEnabled(true);
+				}
+				counter = 0;
+				allergenAmount = 0;
+				for(int i = 0; i <= 4; i++) {
+					app.buttonList.get(i).setEnabled(true);							
+				}
+				app.buttonList.get(6).setVisible(false);
+				
+				timer.stop();
+			}
+		});
 	}
 	public void startRecipeSystem() {
 		screen = new Screen();
-		timer = new Timer(1000, _ -> {
-		     counter++;
-				if(counter == 20) {
-					    for(int i = 4; i <= 10; i++) {
-					    	app.labelList.get(i).setText("");
-					    	app.labelList.get(i-i+9).setText("Allergens:");
-					    }
-	                 	counter = 0;
-						allergenAmount = 0;
-						for(int i = 0; i <= 4; i++) {
-							app.buttonList.get(i).setEnabled(true);							
-						}
-	                    app.buttonList.get(6).setVisible(false);
-				  
-	                    timer.stop();
-				}
-		});
-		timer.start();
 		
 		app.buttonList.get(0).addActionListener(_ -> {
 			timer.start();
@@ -50,13 +50,13 @@ public class RecipeHandler {
 	        for(ActionListener al : app.buttonList.get(6).getActionListeners()) {
 	        	app.buttonList.get(6).removeActionListener(al);
 	        }
-	        app.buttonList.get(6).addActionListener(_ -> {
-	        		app.mt.openMoreTab();
-	                app.buttonList.get(6).setVisible(false);		
-			    	for(JButton b : app.buttonList) {
-			    		b.setEnabled(false);
-			    	}
-	        });
+			app.buttonList.get(6).addActionListener(_ -> {
+				app.mt.openMoreTab();
+				app.buttonList.get(6).setVisible(false);		
+				for(JButton b : app.buttonList) {
+					b.setEnabled(false);
+				}
+			});
 		});
 		app.buttonList.get(1).addActionListener(_ -> {
 			app.labelList.get(5).setText("beef, salt, pepper, garlic");
