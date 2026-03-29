@@ -13,9 +13,7 @@ import Tools.Panel;
 import Tools.ResourceLoader;
 import main.App;
 import sound.Sound;
-
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.*;
 
 public class MoreTab {
 	private JFrame window;
@@ -36,12 +34,12 @@ public class MoreTab {
     private final String[] products = new String[] {"Meat", "Tomato Salad", "Chicken Salad", "Ice-Cream", "Burger"};
     private JComboBox<?> productBox = new JComboBox<>(products);
     
-	public MoreTab(App app) {
+	public MoreTab(App app, RecipeHandler rh) {
 		this.app = app;
-		p = new Panel(app.screen);
-		l = new Labels(app.screen);
-		rh = new RecipeHandler(app);
-	    screen = new Screen();
+		this.p = new Panel(app.screen);
+		this.l = new Labels(app.screen);
+		this.rh = rh;
+	    this.screen = new Screen();
 	}
 	public void openMoreTab() {
 		labelList.add(new JLabel("Product:"));
@@ -119,21 +117,12 @@ public class MoreTab {
             }
 		});
 		buttonList.get(1).addActionListener(_ -> {
-		    	buttonList.get(0).setEnabled(false); 
 		    	displayInfo("Calories:", "Possible Vitamins:", "Protein:", "Sodium", "Water Content:", "Fat:", "Allergens:", "Product:");
 		    	for(JButton b : app.buttonList) {
-		    		if(rh.timer.isRunning() != true) {
-		    			b.setEnabled(false);
-		    			window.dispose();
-		    			buttonList.get(0).setEnabled(true); 
-		    			return;
-		    		}else {
-		    			if(rh.timer.isRunning() != false) {
-		    	 			b.setEnabled(true);
-			    			window.dispose();
-			    			return;			
-		    			}
-		    		}
+		    		  b.setEnabled(false);
+		    		  buttonList.get(0).setEnabled(true); 
+		    		  rh.timer.restart();
+		    		  window.dispose();
 		    	}
 		});
 		for(int labelIndex = 1; labelIndex <= 7; labelIndex++) {
