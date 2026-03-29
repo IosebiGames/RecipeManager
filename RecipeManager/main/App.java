@@ -15,12 +15,12 @@ public class App {
 	public Seperators sp = new Seperators(screen);
 	public Labels lb = new Labels(screen);
 	public TextBox tb = new TextBox(this);
-	public MoreTab mt = new MoreTab(this);
     public Bounds b = new Bounds();
     private Panel panel = new Panel(screen);
     private Button button = new Button();
     private Decorator dec = new Decorator(this);
     private RecipeHandler rh = new RecipeHandler(this);
+    public MoreTab mt = new MoreTab(this, rh);
     
     public ArrayList<JLabel> labelList = new ArrayList<>();
     public ArrayList<JButton> buttonList = new ArrayList<>();
