@@ -1,40 +1,60 @@
 package Tools;
 
-import java.awt.Color;
-import java.util.Date;
-
-import javax.swing.BorderFactory;
-import javax.swing.JTextPane;
-
+import javax.swing.*;
+import java.awt.*;
+import java.time.*;
+import startup.StartupScreen;
 import main.App;
 
 public class TextBox {
-	
 	private JTextPane textPane;
-    private int lastDate = 25;
-    private int currentDate = new Date().getDate();
     private App app;
+    private int lastDate;
+    private int latestDate;
+    private int lastMonth;
+    private int latestMonth;
+    private int daysPerMonth;
+    private String daysAgo, monthsAgo;
+    private LocalDate date;
+    private StartupScreen startupS;
     
-	public TextBox(App app) {
+    public TextBox(App app) {
 		this.app = app;
+		this.date = LocalDate.now();
+	    this.lastDate = 29;
+	    this.lastMonth = 3;
+	    this.latestDate = date.getDayOfMonth();
+	    this.latestMonth = date.getMonthValue();
+	    this.daysPerMonth = 30;
+	    this.startupS = new StartupScreen("Update Tracker Availible!");
 	}
-	public final void validate() {
+	public void validate() {
 		textPane = new JTextPane();
 		textPane.setBounds(0, 0, 338, 123);
 		textPane.setEditable(false);
 		textPane.setFocusable(false);
 		textPane.setEnabled(false);
-		textPane.setText("                                     What's New:\" +\r\n"
-				+ "					\"\\n                                     - Background Bug Fixes \\n\n  Released: 29.03.2026 \" + \"(Disabled)\" + \"\\\n  Version: 1.4v");
 		textPane.setBorder(BorderFactory.createLineBorder(Color.black));
 		app.panelList.get(4).add(textPane);
-		
-		if(new Date().getDate() > 27) {
-			textPane.setText("                                     What's New:" +
-					"\n                                     - Background Bug Fixes \n  Released: 29.03.2026 " + "(Disabled)" + "\n  Version: 1.4v");
+
+		if(startupS.tracker_permission) {
+			setTracker(lastDate, lastMonth, latestDate, latestMonth, "This Feature was disallowed by the Developer, it may not work well.");
 		}else {
-			textPane.setText("                                     What's New:\" +\r\n"
-					+ "					\"\\n                                     - Background Bug Fixes \\n\\  Released: 29.03.2026 \" + \"(Disabled)\" + \"\\n  Version: 1.4v");	
+			setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026");
 		}
 	}
+	private void setInformation(final String info) {
+		textPane.setText(info);
+	}
+	private void setTracker(int lastDate, int lastMonth, int latestDate, int latestMonth, final String warningTip) {
+		 textPane.setToolTipText(warningTip);
+		 if(lastMonth < latestMonth) {
+	        monthsAgo = " (" + (latestMonth -= lastMonth) + "mo)";
+	        setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026" + monthsAgo);
+		 }else if(lastDate > latestDate) {
+			daysPerMonth = daysPerMonth - (lastDate -= latestDate);
+			daysAgo = " (" + daysPerMonth + "d)";
+			setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026" + daysAgo);
+		}
+	} 
 }
