@@ -15,7 +15,15 @@ public class StartupScreen {
 	private int procentage = 0;
 	public Timer timer;
 	private boolean startup_permission = true;
+	public boolean tracker_permission = false;
 	
+	public StartupScreen(String message) {
+	    if(tracker_permission) {
+	    	System.out.println(message);
+	    }else {
+	    	return;
+	    }
+	}
 	public StartupScreen() {
 	   window = new JFrame("Recipe Manager");
 	   window.setResizable(false);
