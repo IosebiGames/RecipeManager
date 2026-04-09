@@ -21,8 +21,8 @@ public class TextBox {
     public TextBox(App app) {
 		this.app = app;
 		this.date = LocalDate.now();
-	    this.lastDate = 29;
-	    this.lastMonth = 3;
+	    this.lastDate = 9;
+	    this.lastMonth = 4;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
 	    this.daysPerMonth = 30;
@@ -40,7 +40,7 @@ public class TextBox {
 		if(startupS.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "This Feature was disallowed by the Developer, it may not work well.");
 		}else {
-			setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026");
+			setInformation("                                           What's New: " + "\n                          - Background Bug Fixes \n                          - Undergoing Maintaince\n                          - Code Improvement\n\n\n   Released: 9.04.2026");
 		}
 	}
 	private void setInformation(final String info) {
@@ -50,11 +50,11 @@ public class TextBox {
 		 textPane.setToolTipText(warningTip);
 		 if(lastMonth < latestMonth) {
 	        monthsAgo = " (" + (latestMonth -= lastMonth) + "mo)";
-	        setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026" + monthsAgo);
+	        setInformation("                                             What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 9.04.2026" + monthsAgo);
 		 }else if(lastDate > latestDate) {
 			daysPerMonth = daysPerMonth - (lastDate -= latestDate);
 			daysAgo = " (" + daysPerMonth + "d)";
-			setInformation("                                            What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 1.04.2026" + daysAgo);
+			setInformation("                                             What's New: " + "\n                          - Background Bug Fixes \n\n\n\n\n   Released: 9.04.2026" + daysAgo);
 		}
 	} 
 }
