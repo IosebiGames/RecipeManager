@@ -1,6 +1,10 @@
 package startup;
 
 import javax.swing.*;
+
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -40,7 +44,7 @@ public class StartupScreen {
 		e.printStackTrace();
      }
 
-       bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("SansSerif", Font.BOLD, 15));
+       bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
      
        timer = new Timer(100, new ActionListener() {
     	   public void actionPerformed(ActionEvent e) {
@@ -80,5 +84,16 @@ public class StartupScreen {
 		 bar.setFont(f);
 		 window.add(bar);
 		 return bar;
+	}
+	public static void setMode(String mode) {
+		try {
+			if(mode.equals("Dark") || mode.equals("Dark".toLowerCase())) { 
+				UIManager.setLookAndFeel(new FlatDarkLaf());
+			}else if(mode.equals("Light") || mode.equals("Light".toLowerCase())) {
+				UIManager.setLookAndFeel(new FlatLightLaf());
+			}
+		}catch(UnsupportedLookAndFeelException e) {
+            System.out.println("Unable to change Lighting Mode: " + e.getMessage());			
+		}
 	}
 }
