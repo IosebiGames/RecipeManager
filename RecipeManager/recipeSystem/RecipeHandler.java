@@ -10,15 +10,16 @@ public class RecipeHandler {
     private int counter = 0, allergenAmount = 0;
     public Timer timer;
     private Screen screen;
-
+    private MoreTab mt; 
+    
     public RecipeHandler(App app) {
         this.app = app;
-
+        this.screen = new Screen();
+        
         timer = new Timer(1000, _ -> {
             counter++;
             if (counter == 10) {
                 timer.stop();
-
                 for (JButton b : app.buttonList) {
                     b.setEnabled(false);
                 }
@@ -33,16 +34,17 @@ public class RecipeHandler {
                 for (int i = 0; i <= 4; i++) {
                     app.buttonList.get(i).setEnabled(true);
                 }
-                app.buttonList.get(5).setEnabled(true);
-                app.buttonList.get(6).setEnabled(true);
+                for(int i = 0; i <= 5; i++) {
+                	app.buttonList.get(i).setEnabled(true);
+                }
                 app.buttonList.get(6).setVisible(false);
+                app.buttonList.get(6).setEnabled(true);
+                app.buttonList.get(7).setEnabled(true);
             }
         });
     }
     public void startRecipeSystem() {
-        screen = new Screen();
-
-        app.buttonList.get(6).addActionListener(_ -> {
+    	app.buttonList.get(6).addActionListener(_ -> {
             timer.stop();
             app.mt.openMoreTab();
             app.buttonList.get(6).setVisible(false);
