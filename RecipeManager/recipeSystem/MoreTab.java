@@ -22,7 +22,7 @@ public class MoreTab {
     private RecipeHandler rh;
     private Screen screen;
 	private Labels l;
-	private Button b = new Button();
+	private Button b;
 	private ResourceLoader rl = new ResourceLoader();
 	private Sound s = new Sound();
 	private Timer resetTimer;
@@ -34,11 +34,12 @@ public class MoreTab {
     private final String[] products = new String[] {"Meat", "Tomato Salad", "Chicken Salad", "Ice-Cream", "Burger"};
     private JComboBox<?> productBox = new JComboBox<>(products);
     
-	public MoreTab(App app, RecipeHandler rh) {
+   public MoreTab(App app, RecipeHandler rh) {
 		this.app = app;
 		this.p = new Panel(app.screen);
-		this.l = new Labels(app.screen);
 		this.rh = rh;
+		this.l = new Labels(app.screen);
+		this.b = new Button(app, this);
 	    this.screen = new Screen();
 	}
 	public void openMoreTab() {
