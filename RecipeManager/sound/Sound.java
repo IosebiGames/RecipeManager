@@ -1,31 +1,29 @@
 package sound;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineEvent;
 import Tools.ResourceLoader;
 
 public class Sound {
-	private ResourceLoader rl;
 	private Clip clip;
-	
+	private ResourceLoader rl;
+    
 	public Sound() {
-		  rl = new ResourceLoader();
-		  try {
-           clip = AudioSystem.getClip();
-       	   clip.open(AudioSystem.getAudioInputStream(getClass().getResource(rl.getSoundFile("/sound/click_sound.wav"))));
-       	   
-       	   clip.addLineListener(new LineListener() {
-			 @Override
-			 public void update(LineEvent event) {
-		         if(event.getType() == LineEvent.Type.STOP) {
-		             clip.close(); 	 
-		         }
-			   }
-       	   });
-          }catch(Exception e) {
-        	 IO.println("Failed to prepare the sound: " + e.getMessage());
-        }
+		this.rl = new ResourceLoader();
 	}
-	public void playSound() {
-	     clip.start();
-	}
+    public void playSound(String path) { 
+    	try {
+    		clip = AudioSystem.getClip();
+    	    clip.open(AudioSystem.getAudioInputStream(getClass().getResource(rl.getSoundFile(path))));	
+    	    clip.start();
+    	    clip.addLineListener(e -> {
+    	        if(e.getType() == LineEvent.Type.STOP) {
+    	        	clip.close();
+    	        }
+    	    });
+    	}catch(Exception e) {
+           System.out.println("Failed to play! " + e.getMessage());    	
+    	}
+    }
 }
