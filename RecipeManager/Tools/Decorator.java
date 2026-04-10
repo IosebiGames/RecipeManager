@@ -26,12 +26,12 @@ public class Decorator implements java.awt.event.ActionListener {
     	Drinkpick = new JMenuItem("Pick (90$)");
     	popup1 = new JPopupMenu();
     	popup2 = new JPopupMenu();
-    	sound = new Sound();
-    	rh = new RecipeHandler(app);
     }
     public Decorator(App app) {
         this.app = app;
         this.rl = new ResourceLoader();
+        this.sound = new Sound();
+        this.rh = new RecipeHandler(app);
     }
     public void decorate() {
     	try {
