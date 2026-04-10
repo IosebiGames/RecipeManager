@@ -21,7 +21,7 @@ public class TextBox {
     public TextBox(App app) {
 		this.app = app;
 		this.date = LocalDate.now();
-	    this.lastDate = 9;
+	    this.lastDate = 10;
 	    this.lastMonth = 4;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
@@ -35,17 +35,19 @@ public class TextBox {
 		textPane.setFocusable(false);
 		textPane.setEnabled(false);
 		textPane.setBorder(BorderFactory.createLineBorder(Color.black));
+		textPane.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		app.panelList.get(4).add(textPane);
 
 		if(startupS.tracker_permission) {
-			setTracker(lastDate, lastMonth, latestDate, latestMonth, "This Feature was disallowed by the Developer, it may not work well.");
+			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                                           What's New: " + "\n                          - Background Bug Fixes \n                          - Undergoing Maintaince\n                          - Code Improvement\n\n\n   Released: 9.04.2026");
+			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          - Undergoing Maintaince\n                          - Code Improvement\n\n\n   Released: 10.04.2026");
 		}
 	}
 	private void setInformation(final String info) {
 		textPane.setText(info);
 	}
+	//Unmaintained regions
 	private void setTracker(int lastDate, int lastMonth, int latestDate, int latestMonth, final String warningTip) {
 		 textPane.setToolTipText(warningTip);
 		 if(lastMonth < latestMonth) {
