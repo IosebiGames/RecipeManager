@@ -1,12 +1,23 @@
 package Tools;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
+import main.App;
 import sound.Sound;
+import recipeSystem.MoreTab;
 
 public class Button {
+	private App app;
+	private MoreTab mt;
+	private Sound sound;
 	
+	public Button(App app, MoreTab mt) {
+		this.app = app;
+		this.mt = mt;
+		this.sound = new Sound();
+	}
 	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
@@ -18,8 +29,11 @@ public class Button {
         for (ActionListener al : b.getActionListeners()) {
             b.removeActionListener(al);
         }
-        b.addActionListener(_ -> new Sound().playSound());
-        
+        b.addActionListener(e -> {
+        	if(e.getSource() == b) {
+                new Sound().playSound("/sound/click_sound.wav");
+        	}
+        });
         panel.add(b);
 	}
 	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
@@ -30,5 +44,8 @@ public class Button {
         b.putClientProperty("FlatLaf.background", Color.white);
         b.putClientProperty("FlatLaf.foreground", Color.black);
         panel.add(b);
+	}
+	public Border setBorder(Color c) {
+		return BorderFactory.createLineBorder(c);
 	}
 }
