@@ -29,7 +29,7 @@ public class StartupScreen {
 	    }
 	}
 	public StartupScreen() {
-	   window = new JFrame("Recipe Manager");
+	   window = new JFrame("RecipeManager");
 	   window.setResizable(false);
 	   window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	   window.setPreferredSize(new Dimension(270, 100));
