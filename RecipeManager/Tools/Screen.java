@@ -5,11 +5,12 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Screen {
-	
 	public JFrame window;
 	
-	public void createWindow() {
+	public Screen() {
 		window = new JFrame("RecipeManager");
+	}
+	public void createWindow() {
 		window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setPreferredSize(new Dimension(804, 484));
@@ -28,4 +29,3 @@ public class Screen {
 		window.setIconImage(icon.getImage());
 	}
 }
-
