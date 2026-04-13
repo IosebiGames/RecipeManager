@@ -74,6 +74,7 @@ public class Decorator implements java.awt.event.ActionListener {
     		app.labelList.get(1).setIcon(new ImageIcon(rl.getImage("/images/TomatoSalad.png")));
     		app.labelList.get(1).setBorder(BorderFactory.createLineBorder(Color.black));
     		app.labelList.get(1).setComponentPopupMenu(popup2);
+    		app.labelList.get(10).setFont(new Font("Arial", Font.BOLD, 15));
     		app.buttonList.get(5).addActionListener(this);
     	}catch(IOException e) {
            System.out.println("Failed to Decorate: " + e.getMessage());  		
