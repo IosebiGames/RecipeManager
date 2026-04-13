@@ -39,7 +39,6 @@ public class RecipeHandler {
                 }
                 app.buttonList.get(6).setVisible(false);
                 app.buttonList.get(6).setEnabled(true);
-                app.buttonList.get(7).setEnabled(true);
             }
         });
     }
