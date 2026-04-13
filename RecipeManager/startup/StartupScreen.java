@@ -1,15 +1,13 @@
 package startup;
 
 import javax.swing.*;
-
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatLightLaf;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import Tools.Bounds;
 import Tools.ResourceLoader;
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import main.App;
 
 public class StartupScreen {
