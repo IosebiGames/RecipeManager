@@ -1,4 +1,4 @@
-**RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes and even request them.
+**RecipeManager is a small Desktop app which lets users select a few foods, check their Recipes, possible Allergen amount, Nutritional Information and even request them into a file.
 this Application provides a basic example of how Restaurants can make simple and clear UI for their users to order a specific food.**
 
 <img width="3072" height="2039" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
@@ -9,7 +9,7 @@ this Application provides a basic example of how Restaurants can make simple and
    They had to build an App which lets users to choose a few foods, But many helpers in group ignored their message for days and even didn't answer it for days.
    I reached out to them respectfully and I started Development after we agreed and finished it 3 days early (October 27th) until the Deadline, October 30nd of 2025.
    But they have not reached out on that day, But They replied only on November 9th of 2025, about hand-over and they've said that what I have done is sufficient.
-   I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 132 days.
+   I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 150+ days.
 
   # How was the app made:
    RecipeManager is made trough the Java SE, it uses Java Swing (in-built framework for GUI, part of the Java Fundation Classes), for Components and window that you see, it uses FlatLaf library for a Better, Modern Look & Feel to the users. Java's Sound API is involved to handle the Sounds. Action Handling/Additional Features for GUI comes from Java AWT (Abstract Window Tookit) 
