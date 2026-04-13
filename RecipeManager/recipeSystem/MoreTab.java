@@ -41,7 +41,7 @@ public class MoreTab {
 		this.l = new Labels(app.screen);
 		this.b = new Button(app, this);
 	    this.screen = new Screen();
-	}
+    }
 	public void openMoreTab() {
 		labelList.add(new JLabel("Product:"));
 		labelList.add(new JLabel("Calories:"));
@@ -82,8 +82,8 @@ public class MoreTab {
 
 		for(int i = 0; i <= 1; i++) {
 			p.createPanel(PanelList.get(i-i), new Bounds(i+28, i+91, i+238, i+310).getBounds(), false);
-			b.createButton(buttonList.get(i-i), new Bounds(i+9, i+215, i+169, i+40).getBounds(), false, PanelList.get(i-i), true);
-			b.createButton(buttonList.get(i), new Bounds(i+9, i+259, i+169, i+40).getBounds(), false, PanelList.get(i-i), true);
+			b.createButton(buttonList.get(i-i), new Bounds(i+9, i+215, i+169, i+40).getBounds(), false, PanelList.get(i-i), true, Color.white, Color.black);
+			b.createButton(buttonList.get(i), new Bounds(i+9, i+259, i+169, i+40).getBounds(), false, PanelList.get(i-i), true, Color.white, Color.black);
 		}
 		for(int i = 0; i <= 1; i++) {
 			buttonList.get(i).setBackground(Color.white);
