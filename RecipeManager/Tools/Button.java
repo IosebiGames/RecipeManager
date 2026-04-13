@@ -19,10 +19,12 @@ public class Button {
 		this.mt = mt;
 		this.sound = new Sound();
 	}
-	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
+	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
         b.setFont(new Font("Arial", Font.BOLD, 12));
+        b.setBackground(bc);
+        b.setForeground(fc);
         b.setVisible(visible);
         b.putClientProperty("JButton.buttonType", "roundRect");
         b.putClientProperty("FlatLaf.background", Color.white);
@@ -38,10 +40,12 @@ public class Button {
         });
         panel.add(b);
 	}
-	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
+	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
         b.setFont(new Font("Arial", Font.BOLD, 12));
+        b.setBackground(bc);
+        b.setForeground(fc);
         b.setVisible(visible);
         b.putClientProperty("JButton.buttonType", "roundRect");
         b.putClientProperty("FlatLaf.background", Color.white);
