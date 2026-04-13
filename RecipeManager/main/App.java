@@ -12,7 +12,7 @@ import startup.StartupScreen;
 
 public class App {
 	public Screen screen = new Screen();
-	public Seperators sp = new Seperators(screen);
+	public Separators sp = new Separators(screen);
 	public Labels lb = new Labels(screen);
 	public TextBox tb = new TextBox(this);
     public Bounds b = new Bounds();
@@ -76,12 +76,8 @@ public class App {
 			buttonList.get(i).setBackground(Color.white);
 			buttonList.get(i).setForeground(Color.black);
 		}
-		for(int i = 13; i <= 17; i++) {
-			labelList.get(i).setBackground(Color.black);
-		    labelList.get(i).setFont(FontList.get(i-i));
-		}
 		for(int i = 0; i < Bounds.yPostions.length; i++) {
-			sp.createSeperator(labelList.get(13+i), new Bounds(338, Bounds.yPostions[i], 115, 42).getBounds(), true);
+			sp.createSeparator(labelList.get(13+i), new Bounds(336, Bounds.yPostions[i], 115, 42).getBounds(), true);
 		}
 		dec.decorate();
 	    rh.startRecipeSystem();
