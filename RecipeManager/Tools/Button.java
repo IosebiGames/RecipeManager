@@ -9,6 +9,7 @@ import sound.Sound;
 import recipeSystem.MoreTab;
 
 public class Button {
+	
 	private App app;
 	private MoreTab mt;
 	private Sound sound;
@@ -21,6 +22,7 @@ public class Button {
 	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
+        b.setFont(new Font("Arial", Font.BOLD, 12));
         b.setVisible(visible);
         b.putClientProperty("JButton.buttonType", "roundRect");
         b.putClientProperty("FlatLaf.background", Color.white);
@@ -39,6 +41,7 @@ public class Button {
 	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible) {
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
+        b.setFont(new Font("Arial", Font.BOLD, 12));
         b.setVisible(visible);
         b.putClientProperty("JButton.buttonType", "roundRect");
         b.putClientProperty("FlatLaf.background", Color.white);
