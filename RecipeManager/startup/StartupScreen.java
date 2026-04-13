@@ -18,6 +18,7 @@ public class StartupScreen {
 	public Timer timer;
 	private boolean startup_permission = true;
 	public boolean tracker_permission = false;
+	private App app;
 	
 	public StartupScreen(String message) {
 	    if(tracker_permission) {
@@ -26,7 +27,9 @@ public class StartupScreen {
 	    	return;
 	    }
 	}
-	public StartupScreen() {
+	public StartupScreen(App app) {
+	   this.app = app;
+		
 	   window = new JFrame("RecipeManager");
 	   window.setResizable(false);
 	   window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,9 +41,9 @@ public class StartupScreen {
    
        try {
 		setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
-	 } catch (IOException e) {
+	   } catch (IOException e) {
 		e.printStackTrace();
-     }
+       }
 
        bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
      
