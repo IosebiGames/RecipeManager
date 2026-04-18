@@ -14,7 +14,7 @@ public class App {
 	public Screen screen = new Screen();
 	public Separators sp = new Separators(screen);
 	public Labels lb = new Labels(screen);
-	public TextBox tb = new TextBox(this);
+	public TextBox tb = new TextBox(this); 
     public Bounds b = new Bounds();
     private Panel panel = new Panel(screen);
     private Decorator dec = new Decorator(this);
@@ -63,11 +63,11 @@ public class App {
 		lb.createLabel(labelList.get(1), null, null, new Bounds(187, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(3), FontList.get(1), Color.green, new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
-		lb.createLabel(labelList.get(4), null, null, new Bounds(104, 99, 176, 18).getBounds(), false, panelList.get(1));
-		lb.createLabel(labelList.get(5), null, null, new Bounds(104, 128, 176, 18).getBounds(), false, panelList.get(1));
-		lb.createLabel(labelList.get(6), null, null, new Bounds( 109, 157, 176, 18).getBounds(), false, panelList.get(1));
-		lb.createLabel(labelList.get(7),null, null, new Bounds(140, 213, 166, 23).getBounds(), false, panelList.get(1));
-		lb.createLabel(labelList.get(8), null, null, new Bounds( 140, 183, 166, 23).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(4), null, null, new Bounds(104, 94, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(5), null, null, new Bounds(104, 124, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(6), null, null, new Bounds(109, 153, 176, 18).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(7),null, null, new Bounds(140, 211, 166, 23).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(8), null, null, new Bounds(140, 180, 166, 23).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(9), FontList.get(1), Color.red, new Bounds(93, 11, 210, 54).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(10), null, null, new Bounds(93, 63, 145, 14).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(11), FontList.get(1), new Color(255, 165, 0), new Bounds(86, 5, 171, 40).getBounds(), false, panelList.get(3));
