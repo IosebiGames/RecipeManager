@@ -37,10 +37,10 @@ public class App {
     };
     private App(String runtimeType) {
     	if(runtimeType.equals("User Runtime") || runtimeType.equals("User Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Dark");
+    	      StartupScreen.setMode("Light");
     	      new startup.StartupScreen(this).timer.start();
         }else if(runtimeType.equals("Developer Runtime") || runtimeType.equals("Developer Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Dark");
+    	      StartupScreen.setMode("Light");
     	      new App();
         }
     }
@@ -59,7 +59,7 @@ public class App {
 		for(int i = 0; i < panelList.size(); i++) {
 	        panel.createPanel(panelList.get(i), new Bounds(Bounds.panelXPostions[i], Bounds.panelYPostions[i], 338, Bounds.panelHeightPostions[i]).getBounds(), false);
 		}
-		lb.createLabel(labelList.get(0), FontList.get(1), Color.yellow, new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(0), FontList.get(1), new Color(255, 223, 0), new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(1), null, null, new Bounds(187, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(3), FontList.get(1), Color.green, new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
@@ -70,7 +70,7 @@ public class App {
 		lb.createLabel(labelList.get(8), null, null, new Bounds( 140, 183, 166, 23).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(9), FontList.get(1), Color.red, new Bounds(93, 11, 210, 54).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(10), null, null, new Bounds(93, 63, 145, 14).getBounds(), false, panelList.get(2));
-		lb.createLabel(labelList.get(11), FontList.get(1), new Color(255, 195, 51), new Bounds(86, 5, 171, 40).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(11), FontList.get(1), new Color(255, 165, 0), new Bounds(86, 5, 171, 40).getBounds(), false, panelList.get(3));
 		lb.createLabel(labelList.get(12), FontList.get(2), new Color(255, 192, 51), new Bounds(96, 38, 133, 14).getBounds(), false, panelList.get(3));
 		
 		button.createButton(buttonList.get(0), new Bounds(10, 93, 86, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
