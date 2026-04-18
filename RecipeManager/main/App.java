@@ -37,10 +37,10 @@ public class App {
     };
     private App(String runtimeType) {
     	if(runtimeType.equals("User Runtime") || runtimeType.equals("User Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Light");
+    	      StartupScreen.setMode("Dark");
     	      new startup.StartupScreen(this).timer.start();
         }else if(runtimeType.equals("Developer Runtime") || runtimeType.equals("Developer Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Light");
+    	      StartupScreen.setMode("Dark");
     	      new App();
         }
     }
