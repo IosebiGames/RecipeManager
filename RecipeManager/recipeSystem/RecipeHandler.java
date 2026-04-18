@@ -60,7 +60,6 @@ public class RecipeHandler {
             if (!timer.isRunning()) {
                 timer.start();
             }
-            if (!timer.isRunning()) return;
             app.labelList.get(4).setText("beef patty, bun, lettuce, tomato");
             allergenAmount += 1;
             app.labelList.get(10).setText("" + allergenAmount);
@@ -68,28 +67,24 @@ public class RecipeHandler {
             app.buttonList.get(6).setVisible(true);
         });
         app.buttonList.get(1).addActionListener(_ -> {
-            if (!timer.isRunning()) return;
             app.labelList.get(5).setText("beef, salt, pepper, garlic");
             allergenAmount += 1;
             app.labelList.get(10).setText("" + allergenAmount);
             app.buttonList.get(1).setEnabled(false);
         });
         app.buttonList.get(2).addActionListener(_ -> {
-            if (!timer.isRunning()) return;
             app.labelList.get(6).setText("milk, cream, sugar, egg yolks");
             allergenAmount += 1;
             app.labelList.get(10).setText("" + allergenAmount);
             app.buttonList.get(2).setEnabled(false);
         });
         app.buttonList.get(3).addActionListener(_ -> {
-            if (!timer.isRunning()) return;
             app.labelList.get(8).setText("mayonnaise, celery, lettuce");
             allergenAmount += 1;
             app.labelList.get(10).setText("" + allergenAmount);
             app.buttonList.get(3).setEnabled(false);
         });
         app.buttonList.get(4).addActionListener(_ -> {
-            if (!timer.isRunning()) return;
             app.labelList.get(7).setText("tomato, olive oil, salt, vinegar");
             allergenAmount += 1;
             app.labelList.get(10).setText("" + allergenAmount);
