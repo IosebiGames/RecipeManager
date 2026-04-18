@@ -2,6 +2,8 @@ package recipeSystem;
 
 import javax.swing.*;
 import Tools.Screen;
+
+import java.awt.Font;
 import java.io.*;
 import main.App;
 
@@ -43,6 +45,9 @@ public class RecipeHandler {
         });
     }
     public void startRecipeSystem() {
+    	for(int i = 4; i <= 8; i++) {
+    		app.labelList.get(i).setFont(new Font("Segoe UI", Font.BOLD, 11));
+    	}
     	app.buttonList.get(6).addActionListener(_ -> {
             timer.stop();
             app.mt.openMoreTab();
