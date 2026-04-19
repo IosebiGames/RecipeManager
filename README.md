@@ -3,7 +3,7 @@ this Application provides a basic example of how Restaurants can make simple and
               <p align="center">
                   <b>Latest version is RecipeManager v1.5!</b><br/>
                   <b>Consider choosing latest version for best user experience.</b>
-                  <b> (in 'Download' Folders, open 'New' folder and select: RecipeManager(Dark)v1.5.jar or Light one.) </b>
+                  <b>(in 'Download' Folders, open 'New' folder and select: RecipeManager(Dark/Light)v1.5.jar)</b>
 </p>
 
 <img width="3072" height="2039" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
