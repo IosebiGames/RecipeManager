@@ -2,8 +2,10 @@
 this Application provides a basic example of how Restaurants can make simple and clear UI for their users to order a specific food.**
 
 <img width="3072" height="2039" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
-                 <b>Latest version is RecipeManager v1.5!</b><br/>
-                 <b>Consider choosing latest version for best user experience.</b><br/>
+              <p align="center">
+                  <b>Latest version is RecipeManager v1.5!</b><br/>
+                  <b>Consider choosing latest version for best user experience.</b>
+</p>
 <img width="3072" height="1909" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.png?raw=true" />
 
   # History of the RecipeManager:
