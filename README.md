@@ -2,7 +2,7 @@
 this Application provides a basic example of how Restaurants can make simple and clear UI for their users to order a specific food.**
               <p align="center">
                   <b>Latest version is RecipeManager v1.5!</b><br/>
-                  <b>Consider choosing latest version for best user experience.</b>
+                  <b>Consider choosing latest version for best user experience.</b><br/>
                   <b>(in 'Download' Folders, open 'New' folder and select: RecipeManager(Dark/Light)v1.5.jar)</b>
 </p>
 
