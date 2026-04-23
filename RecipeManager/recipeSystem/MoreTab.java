@@ -3,17 +3,14 @@ package recipeSystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 import java.util.ArrayList;
-
+import main.App;
 import Tools.*;
 import Tools.Button;
 import Tools.Labels;
 import Tools.Panel;
-import Tools.ResourceLoader;
-import main.App;
 import sound.Sound;
-import com.formdev.flatlaf.*;
+import startup.StartupScreen;
 
 public class MoreTab {
 	private JFrame window;
@@ -64,21 +61,8 @@ public class MoreTab {
 			}
 		});
 		resetTimer.start();
-		window = new JFrame("More Information");
-		window.setResizable(false);
-		window.getContentPane().setLayout(null);
-		window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);		
-		window.setPreferredSize(new Dimension(306, 459));
-		window.pack();
-		window.setLocationRelativeTo(null);
-		window.setVisible(true);
 		
-		try {
-			window.setIconImage(new ImageIcon(rl.getImage("/images/icon.png")).getImage());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		window.addWindowListener(new WindowH());
+		window = Screen.createWindow("More Information", false, true, 306, 459, JFrame.DO_NOTHING_ON_CLOSE, new ImageIcon(getClass().getResource("/images/icon.png")).getImage(), new WindowH());
 
 		for(int i = 0; i <= 1; i++) {
 			p.createPanel(PanelList.get(i-i), new Bounds(i+28, i+91, i+238, i+310).getBounds(), false);
@@ -133,11 +117,7 @@ public class MoreTab {
 		window.getContentPane().add(labelList.get(0));
 		window.getContentPane().add(productBox);
 		
-  	  try {
-		  UIManager.setLookAndFeel(new FlatDarkLaf());
-	  } catch (UnsupportedLookAndFeelException e) {
-		  System.out.println("Failed to load Look and Feel: " + e.getMessage());
-	  }
+		StartupScreen.setMode("Light");
 	}
 	private Font createFont(String fontName, int type, int size) {
 		return new Font(fontName, type, size);
