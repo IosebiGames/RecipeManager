@@ -24,7 +24,7 @@ public class MoreTab {
 	private Sound s = new Sound();
 	private Timer resetTimer;
     private int counter = 0;
-    
+    private String[] text;
     public ArrayList<JLabel> labelList = new ArrayList<>();
     public ArrayList<JButton> buttonList = new ArrayList<>();
     public ArrayList<JPanel> PanelList = new ArrayList<>();
@@ -129,14 +129,10 @@ public class MoreTab {
 		     resetTimer.start();
 		}
 	}
-	private void displayInfo(String caloriesInf, String vitaminInf, String proteinInf, String sodiumInf, String waterInf, String FatInf, String allergenInf, String prodctInf) {
-		labelList.get(0).setText(prodctInf);
-		labelList.get(1).setText(caloriesInf);
-		labelList.get(2).setText(vitaminInf);
-		labelList.get(3).setText(proteinInf);
-		labelList.get(4).setText(sodiumInf);
-		labelList.get(5).setText(FatInf);
-		labelList.get(6).setText(waterInf);
-		labelList.get(7).setText(allergenInf);
- 	}
+	private void displayInfo(String caloriesInf, String vitaminInf, String proteinInf, String sodiumInf, String waterInf, String fatInf, String allergenInf, String productInf) {
+        text = new String[] {productInf, caloriesInf, vitaminInf, proteinInf, sodiumInf, fatInf, waterInf, allergenInf};
+        for(int i = 0; i < text.length; i++) { 
+             labelList.get(i).setText(text[i]);
+       }
+    }
 }
