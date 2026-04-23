@@ -1,28 +1,26 @@
 package sound;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.*;
 import Tools.ResourceLoader;
 
 public class Sound {
 	private Clip clip;
-	private ResourceLoader rl;
+	private ResourceLoader rl = new ResourceLoader();
     
-	public Sound() {
-		this.rl = new ResourceLoader();
-	}
-    public void playSound(String path) { 
+    public void playSound(String path, boolean preciseDebugging) { 
     	try {
     		clip = AudioSystem.getClip();
     	    clip.open(AudioSystem.getAudioInputStream(getClass().getResource(rl.getSoundFile(path))));	
     	    clip.start();
     	    clip.addLineListener(e -> {
     	      if(e.getType() == LineEvent.Type.STOP) { 
-    	           clip.close();
-    	    }});
+    	            clip.close();
+    	      }});
     	}catch(Exception e) {
-           System.out.println("Failed to play! " + e.getMessage());    	
+    		if(preciseDebugging) e.printStackTrace();	
+    		else {
+    			IO.println("Failed to play! " + e.getMessage());    	
+    		}
     	}
     }
 }
