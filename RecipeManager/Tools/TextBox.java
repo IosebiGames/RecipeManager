@@ -41,7 +41,7 @@ public class TextBox {
 		if(startupS.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 18.04.2026");
+			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 23.04.2026");
 		}
 	}
 	private void setInformation(final String info) {
