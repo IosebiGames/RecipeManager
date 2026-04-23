@@ -24,7 +24,7 @@ public class MoreTab {
 	private Sound s = new Sound();
 	private Timer resetTimer;
     private int counter = 0;
-    private String[] text;
+    private String[] text, labelTexts;
     public ArrayList<JLabel> labelList = new ArrayList<>();
     public ArrayList<JButton> buttonList = new ArrayList<>();
     public ArrayList<JPanel> PanelList = new ArrayList<>();
@@ -38,16 +38,12 @@ public class MoreTab {
 		this.l = new Labels(app.screen);
 		this.b = new Button(app, this);
 	    this.screen = new Screen();
+	    this.labelTexts = new String[] {"Product:", "Calories:", "Possible Vitamins:", "Fats:", "Sodium:", "Protein:", "Water:", "Allergens:"};
     }
 	public void openMoreTab() {
-		labelList.add(new JLabel("Product:"));
-		labelList.add(new JLabel("Calories:"));
-		labelList.add(new JLabel("Possible Vitamins:"));
-		labelList.add(new JLabel("Fats:"));
-		labelList.add(new JLabel("Sodium:"));
-		labelList.add(new JLabel("Protein:"));
-		labelList.add(new JLabel("Water Content:"));
-		labelList.add(new JLabel("Allergens:"));
+		for(int i = 0; i <= 7; i++) {
+			labelList.add(new JLabel(labelTexts[i]));	
+		}
 		buttonList.add(new JButton("Request all Recipes"));
 		buttonList.add(new JButton("Close"));
 	    PanelList.add(new JPanel());
@@ -65,9 +61,9 @@ public class MoreTab {
 		window = Screen.createWindow("More Information", false, true, 306, 459, JFrame.DO_NOTHING_ON_CLOSE, new ImageIcon(getClass().getResource("/images/icon.png")).getImage(), new WindowH());
 
 		for(int i = 0; i <= 1; i++) {
-			p.createPanel(PanelList.get(i-i), new Bounds(i+28, i+91, i+238, i+310).getBounds(), false);
-			b.createButton(buttonList.get(i-i), new Bounds(i+9, i+215, i+169, i+40).getBounds(), false, PanelList.get(i-i), true, Color.white, Color.black);
-			b.createButton(buttonList.get(i), new Bounds(i+9, i+259, i+169, i+40).getBounds(), false, PanelList.get(i-i), true, Color.white, Color.black);
+			p.createPanel(PanelList.get(0), new Bounds(29, 92, 239, 311).getBounds(), false);
+			b.createButton(buttonList.get(0), new Bounds(10, 216, 170, 4).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
+			b.createButton(buttonList.get(0), new Bounds(10, 260, 170, 41).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
 		}
 		for(int i = 0; i <= 1; i++) {
 			buttonList.get(i).setBackground(Color.white);
