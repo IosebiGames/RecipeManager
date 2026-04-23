@@ -60,11 +60,10 @@ public class MoreTab {
 		
 		window = Screen.createWindow("More Information", false, true, 306, 459, JFrame.DO_NOTHING_ON_CLOSE, new ImageIcon(getClass().getResource("/images/icon.png")).getImage(), new WindowH());
 
-		for(int i = 0; i <= 1; i++) {
-			p.createPanel(PanelList.get(0), new Bounds(29, 92, 239, 311).getBounds(), false);
-			b.createButton(buttonList.get(0), new Bounds(10, 216, 170, 4).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
-			b.createButton(buttonList.get(0), new Bounds(10, 260, 170, 41).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
-		}
+		p.createPanel(PanelList.get(0), new Bounds(29, 92, 239, 311).getBounds(), false);
+		b.createButton(buttonList.get(0), new Bounds(10, 216, 170, 41).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
+		b.createButton(buttonList.get(1), new Bounds(10, 260, 170, 41).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
+		
 		for(int i = 0; i <= 1; i++) {
 			buttonList.get(i).setBackground(Color.white);
 			buttonList.get(i).setForeground(Color.black);
