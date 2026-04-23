@@ -35,7 +35,7 @@ public class Button {
         }
         b.addActionListener(e -> {
         	if(e.getSource() == b) {
-                new Sound().playSound("/sound/click_sound.wav");
+                new Sound().playSound("/sound/click_sound.wav", false);
         	}
         });
         panel.add(b);
