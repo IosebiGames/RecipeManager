@@ -27,34 +27,28 @@ public class RecipeHandler {
                 }
                 counter = 0;
                 allergenAmount = 0;
-                for (int i = 4; i <= 8; i++) {
-                    app.labelList.get(i).setText("");
-                }
+                
+                for(int i = 4; i <= 8; i++) app.labelList.get(i).setText("");
+                
                 app.labelList.get(9).setText("Allergens:");
                 app.labelList.get(10).setText("0");
 
-                for (int i = 0; i <= 4; i++) {
-                    app.buttonList.get(i).setEnabled(true);
-                }
-                for(int i = 0; i <= 5; i++) {
-                	app.buttonList.get(i).setEnabled(true);
-                }
+                for(int i = 0; i <= 4; i++) app.buttonList.get(i).setEnabled(true);
+                for(int i = 0; i <= 5; i++) app.buttonList.get(i).setEnabled(true);
+                
                 app.buttonList.get(6).setVisible(false);
                 app.buttonList.get(6).setEnabled(true);
             }
         });
     }
     public void startRecipeSystem() {
-    	for(int i = 4; i <= 8; i++) {
-    		app.labelList.get(i).setFont(new Font("Segoe UI", Font.BOLD, 11));
-    	}
+    	for(int i = 4; i <= 8; i++) app.labelList.get(i).setFont(new Font("Segoe UI", Font.BOLD, 11));
+    
     	app.buttonList.get(6).addActionListener(_ -> {
             timer.stop();
             app.mt.openMoreTab();
             app.buttonList.get(6).setVisible(false);
-            for (JButton b : app.buttonList) {
-                b.setEnabled(false);
-            }
+            for (JButton b : app.buttonList) b.setEnabled(false);
         });
         app.buttonList.get(0).addActionListener(_ -> {
             if (!timer.isRunning()) {
