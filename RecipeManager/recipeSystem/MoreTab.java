@@ -78,6 +78,7 @@ public class MoreTab {
 		l.createLabel(labelList.get(7), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 176, 175, 41 ).getBounds(), false, PanelList.get(0));
 		
 		productBox.setFocusable(false);
+		productBox.setFont(createFont("Segoe UI", Font.BOLD, 14));
 		productBox.setBounds(new Bounds( 88, 41, 170, 41).getBounds());
 		
 		productBox.addActionListener(_ -> {
