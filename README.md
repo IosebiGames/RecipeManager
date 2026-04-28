@@ -11,9 +11,10 @@ this Application provides a basic example of how Restaurants can make simple and
 
   # History of the RecipeManager:
    This development started in Early October of 2025, when one person in Java 'Help group' was searching for a help for their coursework.
-   They had to build an App which lets users to choose a few foods, But many helpers in group ignored their message for days and even didn't answer it for days.
+   They had to build an App which lets users to choose a few foods and manage them into Recipies, But many helpers in the group ignored their message for days and even didn't answer to it for days.
    I reached out to them respectfully and I started Development after we agreed and finished it 3 days early (October 27th) until the Deadline, October 30nd of 2025.
-   But they have not reached out on that day, But They replied only on November 9th of 2025, about hand-over and they've said that what I have done is sufficient.
+   Person was pretty respectful and also greatful, but they also were busy and used to replay once per 2/4 days or so.
+   But they have not reached out on October 30, But They replied only on November 9th of 2025, about hand-over agreement and they've said that what I have done is sufficient.
    I agreed on handing over, However I wanted to discuss a details, but after the last message of mine, they have not replied at all, its been 170+ days.
 
   # How was the app made:
