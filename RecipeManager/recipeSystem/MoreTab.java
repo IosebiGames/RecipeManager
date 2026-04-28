@@ -58,7 +58,7 @@ public class MoreTab {
 		});
 		resetTimer.start();
 		
-		window = Screen.createWindow("More Information", false, true, 306, 459, JFrame.DO_NOTHING_ON_CLOSE, new ImageIcon(getClass().getResource("/images/icon.png")).getImage(), new WindowH());
+		window = Screen.createWindow("More Info", false, true, 306, 459, JFrame.DO_NOTHING_ON_CLOSE, new ImageIcon(getClass().getResource("/images/icon.png")).getImage(), new WindowH());
 
 		p.createPanel(PanelList.get(0), new Bounds(29, 92, 239, 311).getBounds(), false);
 		b.createButton(buttonList.get(0), new Bounds(10, 216, 170, 41).getBounds(), false, PanelList.get(0), true, Color.white, Color.black);
@@ -68,14 +68,14 @@ public class MoreTab {
 			buttonList.get(i).setBackground(Color.white);
 			buttonList.get(i).setForeground(Color.black);
 		}
-		l.createLabel(labelList.get(0), createFont("Tahoma", Font.BOLD, 20), Color.black, new Bounds(88, -8, 161, 63 ).getBounds(), false, null);
-		l.createLabel(labelList.get(1), createFont("Times New Roman", Font.BOLD, 18), Color.black,  new Bounds( 10, 31, 118, 51 ).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(0), createFont("Tahoma", Font.BOLD, 15), Color.black, new Bounds(28, -8, 181, 63).getBounds(), false, null);
+		l.createLabel(labelList.get(1), createFont("Times New Roman", Font.BOLD, 18), Color.black, new Bounds(10, 31, 118, 51).getBounds(), false, PanelList.get(0));
 		l.createLabel(labelList.get(2), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 73, 165, 51).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(3), createFont("Times New Roman", Font.BOLD, 18), Color.black,  new Bounds(10, 136, 175, 41 ).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(4), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 96, 165, 41 ).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(5), createFont("Times New Roman", Font.BOLD, 16), Color.black,  new Bounds( 10, 116, 165, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(6), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds( 10, 156, 175, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(7), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 176, 175, 41 ).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(3), createFont("Times New Roman", Font.BOLD, 18), Color.black, new Bounds(10, 136, 175, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(4), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 96, 165, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(5), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 116, 165, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(6), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 156, 175, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(7), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 176, 175, 41).getBounds(), false, PanelList.get(0));
 		
 		productBox.setFocusable(false);
 		productBox.setFont(createFont("Segoe UI", Font.BOLD, 14));
@@ -83,11 +83,11 @@ public class MoreTab {
 		
 		productBox.addActionListener(_ -> {
 			  switch(productBox.getSelectedIndex()) {
-			  case 0: displayInfo("Calories: 332", "Vitamin: B12, B6, Iron", "Protein: 26g", "Water: 60mg", "Sodium: 50g", "Fat: 17g (Satured 7g)", "Allergens: 1", "Meat"); break;
-			  case 1: displayInfo("Calories: 120", "Vitamin: A, C, K, Folate", "Protein: 3g", "Sodium: 1.5g", "Water: 150g", "Fat: 4g", "Allergens: 1", "Tomato Salad"); break; 
-			  case 2: displayInfo("Calories: 300", "Vitamin: C, A, K, Folate", "Protein: 30mg", "Sodium: 350mg", "Water: 160g", "Fat: 4g", "Allergens: 1", "Chicken Salad"); break;
-			  case 3: displayInfo("Calories: 250", "Vitamin: A, Calcium", "Protein: 6g", "Sodium: 350mg", "Water: 0.7g", "Fat: 14g", "Allergens: 1", "Ice-Cream"); break;
-			  case 4: displayInfo("Calories: 500", "Vitamin: C, K", "Protein: 15g", "Sodium: 400mg", "Water: 90g", "Fat: 25g", "Allergens: 2", "Burger"); break;
+			  case 0: displayInfo("Calories: 332", "Vitamin: B12, B6, Iron", "Protein: 26g", "Water: 60mg", "Sodium: 50g", "Fat: 17g (Satured 7g)", "Allergens: 1", "Product: " + "Meat"); break;
+			  case 1: displayInfo("Calories: 120", "Vitamin: A, C, K, Folate", "Protein: 3g", "Sodium: 1.5g", "Water: 150g", "Fat: 4g", "Allergens: 1", "Product: " + "Tomato Salad"); break; 
+			  case 2: displayInfo("Calories: 300", "Vitamin: C, A, K, Folate", "Protein: 30mg", "Sodium: 350mg", "Water: 160g", "Fat: 4g", "Allergens: 1", "Product: " + "Chicken Salad"); break;
+			  case 3: displayInfo("Calories: 250", "Vitamin: A, Calcium", "Protein: 6g", "Sodium: 350mg", "Water: 0.7g", "Fat: 14g", "Allergens: 1", "Product: " + "Ice-Cream"); break;
+			  case 4: displayInfo("Calories: 500", "Vitamin: C, K", "Protein: 15g", "Sodium: 400mg", "Water: 90g", "Fat: 25g", "Allergens: 2", "Product: " + "Burger"); break;
 		    }
 		});
 		buttonList.get(0).addActionListener(e -> {
@@ -113,7 +113,7 @@ public class MoreTab {
 		window.getContentPane().add(labelList.get(0));
 		window.getContentPane().add(productBox);
 		
-		StartupScreen.setMode("Light");
+		StartupScreen.setMode("Dark");
 	}
 	private Font createFont(String fontName, int type, int size) {
 		return new Font(fontName, type, size);
@@ -123,6 +123,7 @@ public class MoreTab {
 		     Toolkit.getDefaultToolkit().beep();
 		     buttonList.get(1).setBackground(Color.red);
 		     resetTimer.start();
+		     return;
 		}
 	}
 	private void displayInfo(String caloriesInf, String vitaminInf, String proteinInf, String sodiumInf, String waterInf, String fatInf, String allergenInf, String productInf) {
