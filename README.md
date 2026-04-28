@@ -27,8 +27,7 @@ this Application provides a basic example of how Restaurants can make simple and
   ### License
 This project is licensed under the GNU General Public License v3.0 (GPLv3) - see the LICENSE file for details.
 
-<br/>    
-    **Important!**
+<br/>**Important!**
       <br/> RecipeManager is NOT an Enterprise Project, It is a small, demonstrational app built for experience-gaining purposes.
       I had a specific goal to develop following App in this way. It is not intended for Enterprise operations, just portfolio-oritented build.
 
