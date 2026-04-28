@@ -25,11 +25,7 @@ public class App {
     public List<JButton> buttonList = new ArrayList<>();
     public List<JPanel> panelList = new ArrayList<>();
     public List<Font> FontList = new ArrayList<>();
-    private String[] labelTexts = {
-    	    "Foods & Drinks", "", "",
-    	    "Recipes", "", "", "", "", "",
-    	    "Allergens:", "",
-    	    "Total Sum:", "", "", "", "", "", "", ""};
+    private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", ""};
     public static String[] buttonTexts = {"Burgers:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
     private final static String runtimeType = "User Runtime";
     private Font[] fonts = new Font[] {
@@ -37,10 +33,10 @@ public class App {
     };
     private App(String runtimeType) {
     	if(runtimeType.equals("User Runtime") || runtimeType.equals("User Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Dark");
+    	      StartupScreen.setMode("Light");
     	      new startup.StartupScreen(this).timer.start();
         }else if(runtimeType.equals("Developer Runtime") || runtimeType.equals("Developer Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Dark");
+    	      StartupScreen.setMode("Light");
     	      new App();
         }
     }
