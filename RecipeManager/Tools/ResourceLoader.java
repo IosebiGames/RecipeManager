@@ -8,7 +8,7 @@ public class ResourceLoader {
 	public BufferedImage getImage(String path) throws IOException {
          return ImageIO.read(getClass().getResourceAsStream(path));
 	}
-	public String getSoundFile(String path) {
+	public static String getSoundFile(String path) {
 	     return path;
 	}
 }
