@@ -27,9 +27,9 @@ public class App {
     public List<Font> FontList = new ArrayList<>();
     private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", ""};
     public static String[] buttonTexts = {"Burgers:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
-    private final static String runtimeType = "User Runtime";
+
     private Font[] fonts = new Font[] {
-    		new Font("Tahoma", Font.BOLD, 2), new Font("Sitka Text", Font.BOLD, 31), new Font("Trebuchet MS", Font.BOLD, 18)
+        new Font("Tahoma", Font.BOLD, 2), new Font("Sitka Text", Font.BOLD, 31), new Font("Trebuchet MS", Font.BOLD, 18)
     };
     private App(String runtimeType) {
     	if(runtimeType.equals("User Runtime") || runtimeType.equals("User Runtime".toLowerCase())) {
@@ -86,7 +86,7 @@ public class App {
 	}
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(() -> {
-	         new App(runtimeType);
+	         new App("User Runtime");
 		});
 	}
  }
