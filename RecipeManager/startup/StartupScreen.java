@@ -3,7 +3,6 @@ package startup;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 import Tools.Bounds;
 import Tools.ResourceLoader;
 import com.formdev.flatlaf.FlatDarkLaf;
@@ -39,11 +38,7 @@ public class StartupScreen {
        window.setVisible(true);
        window.getContentPane().setLayout(null);
    
-       try {
-		setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
-	   } catch (IOException e) {
-		e.printStackTrace();
-       }
+	   setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
 
        bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
      
