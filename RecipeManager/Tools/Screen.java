@@ -3,7 +3,6 @@ package Tools;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
-import java.io.IOException;
 
 public class Screen {
 	public JFrame window;
@@ -21,11 +20,7 @@ public class Screen {
         window.setVisible(true);
         window.getContentPane().setLayout(null);
         
-        try {
-			setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+      	setIcon(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")));
 	}
 	private void setIcon(ImageIcon icon) {
 		window.setIconImage(icon.getImage());
