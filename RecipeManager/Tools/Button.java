@@ -11,12 +11,10 @@ import recipeSystem.MoreTab;
 public class Button {
 	private App app;
 	private MoreTab mt;
-	private Sound sound;
 	
 	public Button(App app, MoreTab mt) {
 		this.app = app;
 		this.mt = mt;
-		this.sound = new Sound();
 	}
 	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
         b.setFocusable(focusableStatus);
