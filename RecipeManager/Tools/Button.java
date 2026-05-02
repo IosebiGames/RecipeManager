@@ -9,7 +9,6 @@ import sound.Sound;
 import recipeSystem.MoreTab;
 
 public class Button {
-	
 	private App app;
 	private MoreTab mt;
 	private Sound sound;
@@ -35,7 +34,11 @@ public class Button {
         }
         b.addActionListener(e -> {
         	if(e.getSource() == b) {
-                new Sound().playSound("/sound/click_sound.wav", false);
+                try {
+					new Sound().playSound("/sound/click_sound.wav");
+				} catch (Exception ex) {
+					System.out.println("Failed to play sound: " + ex.getMessage());
+				}
         	}
         });
         panel.add(b);
