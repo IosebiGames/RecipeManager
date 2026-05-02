@@ -21,8 +21,8 @@ public class TextBox {
     public TextBox(App app) {
 		this.app = app;
 		this.date = LocalDate.now();
-	    this.lastDate = 28;
-	    this.lastMonth = 4;
+	    this.lastDate = 2;
+	    this.lastMonth = 5;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
 	    this.daysPerMonth = 30;
@@ -41,7 +41,7 @@ public class TextBox {
 		if(startupS.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 28.04.2026");
+			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 2.05.2026");
 		}
 	}
 	private void setInformation(final String info) {
