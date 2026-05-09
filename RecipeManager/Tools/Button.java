@@ -32,13 +32,9 @@ public class Button {
         }
         b.addActionListener(e -> {
         	if(e.getSource() == b) {
-                try {
-					new Sound().playSound("/sound/click_sound.wav");
-				} catch (Exception ex) {
-					System.out.println("Failed to play sound: " + ex.getMessage());
-				}
+        		new Sound().playSound("/sound/click_sound.wav");
         	}
-        });
+	    });
         panel.add(b);
 	}
 	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
