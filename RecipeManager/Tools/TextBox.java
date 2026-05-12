@@ -24,7 +24,7 @@ public class TextBox {
 	    this.lastMonth = 5;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
-	    this.daysPerMonth = 30;
+	    this.daysPerMonth = 31;
 	}
 	public void validate() {
 		textPane = new JTextPane();
@@ -39,7 +39,7 @@ public class TextBox {
 		if(StartupScreen.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 9.05.2026");
+			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 12.05.2026 " + "(Tracker Disabled)");
 		}
 	}
 	private void setInformation(final String info) {
@@ -49,10 +49,10 @@ public class TextBox {
 		 textPane.setToolTipText(warningTip);
 		 if(latestMonth > lastMonth && latestDate == lastDate) {
 			 daysAgo = " (" + String.valueOf(latestMonth - lastMonth) + "mo)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 9.05.2026" + daysAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 12.05.2026" + daysAgo);
 		 }else if(latestDate < lastDate) {
 			 monthsAgo = " (" + (daysPerMonth - (lastDate -= latestDate)) + "d)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 9.05.2026" + monthsAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 12.05.2026" + monthsAgo);
 		 }
 	} 
 }
