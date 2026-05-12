@@ -93,10 +93,10 @@ public class RecipeHandler {
             IO.println("Can't write Allergen: " + e.getMessage());
         }
     }
-    public void writeRecipe(String fileName, String recipie) {
+    public void writeRecipe(String fileName, String recipe) {
         try {
             System.setOut(new PrintStream(fileName));
-            System.out.println(recipie);
+            System.out.println(recipe);
         } catch (IOException e) {
             IO.println("Can't write Recipe: " + e.getMessage());
         }
