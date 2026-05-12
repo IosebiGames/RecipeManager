@@ -17,11 +17,8 @@ public class StartupScreen {
 	public Timer timer;
 	private boolean startup_permission = true;
 	public static boolean tracker_permission = false;
-	private App app;
 	
-	public StartupScreen(App app) {
-	   this.app = app;
-		
+	public StartupScreen() {
 	   window = new JFrame("RecipeManager");
 	   window.setResizable(false);
 	   window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
