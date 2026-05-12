@@ -20,7 +20,7 @@ public class App {
     private Decorator dec = new Decorator(this);
     private RecipeHandler rh = new RecipeHandler(this);
     public MoreTab mt = new MoreTab(this, rh);
-    private Button button = new Button(this, mt);
+    private Button button = new Button();
     public List<JLabel> labelList = new ArrayList<>();
     public List<JButton> buttonList = new ArrayList<>();
     public List<JPanel> panelList = new ArrayList<>();
