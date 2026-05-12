@@ -55,7 +55,7 @@ public class App {
 		for(int i = 0; i < panelList.size(); i++) {
 	        panel.createPanel(panelList.get(i), new Bounds(Bounds.panelXPostions[i], Bounds.panelYPostions[i], 338, Bounds.panelHeightPostions[i]).getBounds(), false);
 		}
-		lb.createLabel(labelList.get(0), FontList.get(1), new Color(255, 223, 0), new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(0), FontList.get(1), new Color(194, 126, 0), new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(1), null, null, new Bounds(187, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 64, 151, 144).getBounds(), false, panelList.get(0));
 		lb.createLabel(labelList.get(3), FontList.get(1), Color.green, new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
