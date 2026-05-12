@@ -27,19 +27,11 @@ public class App {
     public List<Font> FontList = new ArrayList<>();
     private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", ""};
     public static String[] buttonTexts = {"Burgers:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
-
+    private static String runtimeType = "User Runtime";
+    
     private Font[] fonts = new Font[] {
         new Font("Tahoma", Font.BOLD, 2), new Font("Sitka Text", Font.BOLD, 31), new Font("Trebuchet MS", Font.BOLD, 18)
     };
-    private App(String runtimeType) {
-    	if(runtimeType.equals("User Runtime") || runtimeType.equals("User Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Light");
-    	      new startup.StartupScreen(this).timer.start();
-        }else if(runtimeType.equals("Developer Runtime") || runtimeType.equals("Developer Runtime".toLowerCase())) {
-    	      StartupScreen.setMode("Light");
-    	      new App();
-        }
-    }
     public App() { 
 		 for(String labelText : labelTexts) {
 			labelList.add(new JLabel(labelText));
@@ -86,7 +78,13 @@ public class App {
 	}
 	public static void main(String[] args) {
 		javax.swing.SwingUtilities.invokeLater(() -> {
-	         new App("User Runtime");
+	    	if(runtimeType.equals("User Runtime")) {
+	    	      StartupScreen.setMode("Light");
+	    	      new startup.StartupScreen().timer.start();
+	        }else if(runtimeType.equals("Developer Runtime")) {
+	    	      StartupScreen.setMode("Light");
+	    	      new App();
+	        }
 		});
-	}
+	 }
  }
