@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 import main.App;
 import sound.Sound;
 
@@ -17,11 +20,12 @@ public class Decorator implements java.awt.event.ActionListener {
     private int addings = 0;
     private ResourceLoader rl;
     private ActionListener burgerAL, burgerAL2;
+    private int totalAddings;
     
     public Decorator(App app) {
         this.app = app;
         this.rl = new ResourceLoader();
-     	this.Burgerpick = new JMenuItem("Pick (60$)");
+    	this.Burgerpick = new JMenuItem("Pick (60$)");
     	this.Drinkpick = new JMenuItem("Pick (90$)");
     	this.popup1 = new JPopupMenu();
     	this.popup2 = new JPopupMenu();
@@ -31,6 +35,7 @@ public class Decorator implements java.awt.event.ActionListener {
         	 this.burgerAL = e -> {
  			   if(e.getSource()==Burgerpick) {
  				   addings += 60;
+ 				   totalAddings += addings;
  				   app.labelList.get(12).setText("" + addings);
  				   new Sound().playSound("/sound/click_sound.wav");
  	 			   Burgerpick.setText("Selecting more than once is disallowed, product is too expensive.");
@@ -59,8 +64,10 @@ public class Decorator implements java.awt.event.ActionListener {
     			public void actionPerformed(ActionEvent e) {
     				if(e.getSource()==Drinkpick) {
     					addings += 90;
+    					totalAddings += addings;
     					app.labelList.get(12).setText("" + addings);
     					new Sound().playSound("/sound/click_sound.wav");
+    					savePaymentDetail(String.valueOf(totalAddings));
     				}
     			}        	
     		});
@@ -131,4 +138,12 @@ public class Decorator implements java.awt.event.ActionListener {
                 }
             }
       }
+    private void savePaymentDetail(String content) {
+    	try {
+			System.setOut(new PrintStream("payment.txt"));
+			System.out.println(content);
+		}catch(FileNotFoundException e) {
+			System.out.println("Can't save details: " + e.getMessage());
+		}
+    }
 }
