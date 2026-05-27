@@ -20,7 +20,6 @@ public class Decorator implements java.awt.event.ActionListener {
     private int addings = 0;
     private ResourceLoader rl;
     private ActionListener burgerAL, burgerAL2;
-    private int totalAddings;
     
     public Decorator(App app) {
         this.app = app;
@@ -35,15 +34,15 @@ public class Decorator implements java.awt.event.ActionListener {
         	 this.burgerAL = e -> {
  			   if(e.getSource()==Burgerpick) {
  				   addings += 60;
- 				   totalAddings += addings;
  				   app.labelList.get(12).setText("" + addings);
  				   new Sound().playSound("/sound/click_sound.wav");
  	 			   Burgerpick.setText("Selecting more than once is disallowed, product is too expensive.");
  				   Burgerpick.setEnabled(false);
  				   app.buttonList.get(5).setEnabled(true);
  				   app.buttonList.get(5).addActionListener(this);
+ 				   savePaymentDetail(addings);
  			   }
-            };
+             };
              this.burgerAL2 = e -> {
  		       if(e.getSource()==Burgerpick) {
  				   addings += 60;
@@ -64,10 +63,9 @@ public class Decorator implements java.awt.event.ActionListener {
     			public void actionPerformed(ActionEvent e) {
     				if(e.getSource()==Drinkpick) {
     					addings += 90;
-    					totalAddings += addings;
     					app.labelList.get(12).setText("" + addings);
     					new Sound().playSound("/sound/click_sound.wav");
-    					savePaymentDetail(String.valueOf(totalAddings));
+    					savePaymentDetail(addings);
     				}
     			}        	
     		});
@@ -138,10 +136,10 @@ public class Decorator implements java.awt.event.ActionListener {
                 }
             }
       }
-    private void savePaymentDetail(String content) {
+    private void savePaymentDetail(int sum) {
     	try {
 			System.setOut(new PrintStream("payment.txt"));
-			System.out.println(content);
+			System.out.println(String.valueOf(sum));
 		}catch(FileNotFoundException e) {
 			System.out.println("Can't save details: " + e.getMessage());
 		}
