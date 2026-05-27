@@ -20,7 +20,7 @@ public class TextBox {
     public TextBox(App app) {
 		this.app = app;
 		this.date = LocalDate.now();
-	    this.lastDate = 17;
+	    this.lastDate = 27;
 	    this.lastMonth = 5;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
@@ -39,7 +39,7 @@ public class TextBox {
 		if(StartupScreen.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 17.05.2026 " + "(Tracker Disabled)");
+			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 27.05.2026 " + "(Tracker Disabled)");
 		}
 	}
 	private void setInformation(final String info) {
@@ -49,10 +49,10 @@ public class TextBox {
 		 textPane.setToolTipText(warningTip);
 		 if(latestMonth > lastMonth && latestDate == lastDate) {
 			 daysAgo = " (" + String.valueOf(latestMonth - lastMonth) + "mo)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 17.05.2026" + daysAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 27.05.2026" + daysAgo);
 		 }else if(latestDate < lastDate) {
 			 monthsAgo = " (" + (daysPerMonth - (lastDate -= latestDate)) + "d)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 17.05.2026" + monthsAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 27.05.2026" + monthsAgo);
 		 }
 	} 
 }
