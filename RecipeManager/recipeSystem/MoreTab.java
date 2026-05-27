@@ -118,7 +118,7 @@ public class MoreTab {
 		window.getContentPane().add(labelList.get(0));
 		window.getContentPane().add(productBox);
 		
-		StartupScreen.setMode("Light");
+		StartupScreen.setMode("Light",  null);
 	}
 	private Font createFont(String fontName, int type, int size) {
 		return new Font(fontName, type, size);
