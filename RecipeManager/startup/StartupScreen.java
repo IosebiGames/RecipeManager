@@ -67,15 +67,34 @@ public class StartupScreen {
 		 window.add(bar);
 		 return bar;
 	}
-	public static void setMode(String mode) {
-		try {
-			if(mode.equals("Dark") || mode.equals("Dark".toLowerCase())) { 
-				UIManager.setLookAndFeel(new FlatDarkLaf());
-			}else if(mode.equals("Light") || mode.equals("Light".toLowerCase())) {
-				UIManager.setLookAndFeel(new FlatLightLaf());
+	public static void setMode(String mode, String runtimeType) {
+		if(runtimeType != null) {
+			try {
+				if(mode.equals("Light") && runtimeType.equals("User Runtime")) {
+					setRuntimeState("Light", "User Runtime");
+				}else if(mode.equals("Dark") && runtimeType.equals("User Runtime")) {
+					setRuntimeState("Dark", "User Runtime");
+				}else if(mode.equals("Light") && runtimeType.equals("Developer Runtime")) {
+					setRuntimeState("Light", "Developer Runtime");
+				}else if(mode.equals("Dark") && runtimeType.equals("Developer Runtime")) {
+					setRuntimeState("Dark", "Developer Runtime");
+				}
+			}catch(UnsupportedLookAndFeelException e) {
+                 System.out.println("Failed to set Mode: " + e.getMessage());				
 			}
-		}catch(UnsupportedLookAndFeelException e) {
-            System.out.println("Unable to change Lighting Mode: " + e.getMessage());			
+		}else {
+			return;
 		}
 	}
+	private static void setRuntimeState(String mode, String runtimeType) throws UnsupportedLookAndFeelException {
+		  if(mode.equals("Light") || mode.equals("Light".toLowerCase()) && runtimeType.equals("User Runtime")) {
+				UIManager.setLookAndFeel(new FlatLightLaf());				
+		  }else if(mode.equals("Dark") || mode.equals("Dark".toLowerCase()) && runtimeType.equals("User Runtime")) {
+				UIManager.setLookAndFeel(new FlatDarkLaf());
+		  }else if(mode.equals("Light") || mode.equals("Light".toLowerCase()) && runtimeType.equals("Developer Runtime")) {
+				UIManager.setLookAndFeel(new FlatLightLaf());				
+		  }else if(mode.equals("Dark") || mode.equals("Dark".toLowerCase()) && runtimeType.equals("Developer Runtime")) {
+				UIManager.setLookAndFeel(new FlatDarkLaf());
+		  }
+	 }
 }
