@@ -39,7 +39,7 @@ public class TextBox {
 		if(StartupScreen.tracker_permission) {
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 27.05.2026 " + "(Tracker Disabled)");
+			setInformation("                        What's New: " + "\n                          - Imprecise Payment Bug Fix \n                          - Better Runtime                           \n   Released: 27.05.2026 " + "(Tracker Disabled)");
 		}
 	}
 	private void setInformation(final String info) {
