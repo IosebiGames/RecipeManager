@@ -6,8 +6,8 @@ this Application provides a basic example of how Restaurants can make simple and
                   <b>Go to Releases -> Choose RecipeManager v1.5 -> Download jar</b>
 </p>
 
-<img width="3072" height="1948" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
-<img width="3072" height="1914" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.png?raw=true" />
+<img width="842" height="521" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image.png?raw=true" />
+<img width="842" height="530" alt="image" src="https://github.com/IosebiGames/RecipeManager/blob/main/RecipeManager/images/app_image2.png?raw=true" />
 
   # History of the RecipeManager:
    It all started in Early October of 2025, when I was in one of the Java 'Help groups' were people used to ask for Help there, so Helpers could answer.
