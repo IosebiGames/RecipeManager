@@ -26,7 +26,7 @@ public class App {
     public List<JPanel> panelList = new ArrayList<>();
     public List<Font> FontList = new ArrayList<>();
     private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", ""};
-    public static String[] buttonTexts = {"Burgers:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
+    public static String[] buttonTexts = {"Burger:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
     private Font[] fonts = new Font[] {
         new Font("Tahoma", Font.BOLD, 2), new Font("Sitka Text", Font.BOLD, 31), new Font("Trebuchet MS", Font.BOLD, 18)
     };
@@ -46,9 +46,9 @@ public class App {
 	        panel.createPanel(panelList.get(i), new Bounds(Bounds.panelXPostions[i], Bounds.panelYPostions[i], 338, Bounds.panelHeightPostions[i]).getBounds(), false);
 		}
 		lb.createLabel(labelList.get(0), FontList.get(1), new Color(194, 126, 0), new Bounds(48, 11, 260, 54).getBounds(), false, panelList.get(0));
-		lb.createLabel(labelList.get(1), null, null, new Bounds(187, 64, 151, 144).getBounds(), false, panelList.get(0));
-		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 64, 151, 144).getBounds(), false, panelList.get(0));
-		lb.createLabel(labelList.get(3), FontList.get(1), Color.green, new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
+		lb.createLabel(labelList.get(1), null, null, new Bounds(179, 57, 151, 144).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(2), null, null, new Bounds(10, 57, 151, 144).getBounds(), false, panelList.get(0));
+		lb.createLabel(labelList.get(3), FontList.get(1), new Color(9, 121, 105), new Bounds(114, 11, 151, 54).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(4), null, null, new Bounds(104, 94, 176, 18).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(5), null, null, new Bounds(104, 124, 176, 18).getBounds(), false, panelList.get(1));
 		lb.createLabel(labelList.get(6), null, null, new Bounds(109, 153, 176, 18).getBounds(), false, panelList.get(1));
@@ -64,7 +64,7 @@ public class App {
 		button.createButton(buttonList.get(2), new Bounds(10, 153, 96, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(3), new Bounds(10, 183, 126, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(4), new Bounds(10, 213, 126, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
-		button.createButton(buttonList.get(5), new Bounds(120, 214, 130, 40).getBounds(), false, panelList.get(0), true, Color.white, Color.black);
+		button.createButton(buttonList.get(5), new Bounds(108, 209, 130, 40).getBounds(), false, panelList.get(0), true, Color.white, Color.black);
 		button.createButton(buttonList.get(6), new Bounds(113, 133, 210, 40).getBounds(), false, panelList.get(2), false, Color.white, Color.black);
 
 		for(int i = 0; i < Bounds.yPostions.length; i++) {
