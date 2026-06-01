@@ -25,10 +25,13 @@ public class App {
     public List<JButton> buttonList = new ArrayList<>();
     public List<JPanel> panelList = new ArrayList<>();
     public List<Font> FontList = new ArrayList<>();
-    private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", ""};
+    private String[] labelTexts = {"Foods & Drinks", "", "", "Recipes", "", "", "", "", "", "Allergens:", "", "Total Sum:", "", "", "", "", "", "", "", "Please Select Any product."};
     public static String[] buttonTexts = {"Burger:", "Steak:", "Ice-Cream:", "Chicken Salad:", "Tomato Salad:", "Next", "More"};
     private Font[] fonts = new Font[] {
-        new Font("Tahoma", Font.BOLD, 2), new Font("Sitka Text", Font.BOLD, 31), new Font("Trebuchet MS", Font.BOLD, 18)
+        new Font("Tahoma", Font.BOLD, 2),
+        new Font("Sitka Text", Font.BOLD, 31), 
+        new Font("Trebuchet MS", Font.BOLD, 18), 
+        new Font("Tahoma", Font.BOLD, 15)
     };
     public App() { 
 		 for(String labelText : labelTexts) {
@@ -57,14 +60,15 @@ public class App {
 		lb.createLabel(labelList.get(9), FontList.get(1), Color.red, new Bounds(93, 11, 210, 54).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(10), null, null, new Bounds(93, 63, 145, 14).getBounds(), false, panelList.get(2));
 		lb.createLabel(labelList.get(11), FontList.get(1), new Color(255, 165, 0), new Bounds(86, 5, 171, 40).getBounds(), false, panelList.get(3));
-		lb.createLabel(labelList.get(12), FontList.get(2), new Color(255, 192, 51), new Bounds(96, 38, 133, 14).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(12), FontList.get(2), new Color(255, 165, 0), new Bounds(96, 38, 133, 14).getBounds(), false, panelList.get(3));
+		lb.createLabel(labelList.get(19), FontList.get(3), Color.black, new Bounds(82, 214, 210, 40).getBounds(), false, panelList.get(0));
 		
 		button.createButton(buttonList.get(0), new Bounds(10, 93, 86, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(1), new Bounds(10, 124, 86, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(2), new Bounds(10, 153, 96, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(3), new Bounds(10, 183, 126, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
 		button.createButton(buttonList.get(4), new Bounds(10, 213, 126, 23).getBounds(), false, panelList.get(1), true, Color.white, Color.black);
-		button.createButton(buttonList.get(5), new Bounds(108, 209, 130, 40).getBounds(), false, panelList.get(0), true, Color.white, Color.black);
+		button.createButton(buttonList.get(5), new Bounds(108, 209, 130, 40).getBounds(), false, panelList.get(0), false, Color.white, Color.black);
 		button.createButton(buttonList.get(6), new Bounds(113, 133, 210, 40).getBounds(), false, panelList.get(2), false, Color.white, Color.black);
 
 		for(int i = 0; i < Bounds.yPostions.length; i++) {
