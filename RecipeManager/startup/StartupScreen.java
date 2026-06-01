@@ -29,8 +29,11 @@ public class StartupScreen {
        window.getContentPane().setLayout(null);
        window.setIconImage(new ImageIcon(new ResourceLoader().getImage("/images/icon.png")).getImage());
        
-       bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
-     
+       if(App.mode.equals("Dark")) {
+    	   bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
+       }else if(App.mode.equals("Light")) {
+    	   bar = createBar("Loading.....", 0, true, new Bounds(20, 8, 210, 40).getBounds(), Color.white, Color.red, window, false, true, new Font("Segoe UI", Font.BOLD, 15));
+       }
        timer = new Timer(100, new ActionListener() {
     	   public void actionPerformed(ActionEvent e) {
     		   procentage++;
