@@ -118,7 +118,11 @@ public class MoreTab {
 		window.getContentPane().add(labelList.get(0));
 		window.getContentPane().add(productBox);
 		
-		StartupScreen.setMode("Light",  null);
+		if(App.mode.equals("Dark")) {
+			StartupScreen.setMode("Dark",  null);
+		}else if(App.mode.equals("Light")) {
+			StartupScreen.setMode("Light",  null);
+		}
 	}
 	private Font createFont(String fontName, int type, int size) {
 		return new Font(fontName, type, size);
@@ -126,7 +130,7 @@ public class MoreTab {
 	private void displayInfo(String caloriesInf, String vitaminInf, String proteinInf, String sodiumInf, String waterInf, String fatInf, String allergenInf, String productInf) {
         text = new String[] {productInf, caloriesInf, vitaminInf, proteinInf, sodiumInf, fatInf, waterInf, allergenInf};
         for(int i = 0; i < text.length; i++) { 
-             labelList.get(i).setText(text[i]);
+            labelList.get(i).setText(text[i]);
        }
     }
 }
