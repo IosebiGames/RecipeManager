@@ -32,7 +32,11 @@ public class TextBox {
 		textPane.setEditable(false);
 		textPane.setFocusable(false);
 		textPane.setBorder(BorderFactory.createLineBorder(Color.black));
-		textPane.setForeground(Color.black);
+		if(App.mode.equals("Dark")) {
+			textPane.setForeground(Color.white);
+		}else if(App.mode.equals("Light")) {
+			textPane.setForeground(Color.black);
+		}
 		textPane.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		app.panelList.get(4).add(textPane);
 
