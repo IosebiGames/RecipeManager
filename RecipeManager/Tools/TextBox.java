@@ -20,7 +20,7 @@ public class TextBox {
     public TextBox(App app) {
 		this.app = app;
 		this.date = LocalDate.now();
-	    this.lastDate = 1;
+	    this.lastDate = 8;
 	    this.lastMonth = 6;
 	    this.latestDate = date.getDayOfMonth();
 	    this.latestMonth = date.getMonthValue();
@@ -37,13 +37,19 @@ public class TextBox {
 		}else if(App.mode.equals("Light")) {
 			textPane.setForeground(Color.black);
 		}
-		textPane.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 		app.panelList.get(4).add(textPane);
-
 		if(StartupScreen.tracker_permission) {
+			textPane.setContentType("text/html");	
+			textPane.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 			setTracker(lastDate, lastMonth, latestDate, latestMonth, "Feature was disabled by Developer since April of 2026, Functionality can be limited.");
 		}else {
-			setInformation("                        What's New: " + "\n                          - Imprecise Payment Bug Fix \n                          - Better Runtime                           \n   Released: 1.06.2026 " + "(Tracker Disabled)");
+			textPane.setContentType("text/html");	
+			setInformation("<html><pre style='font-family:sans-serif; font-size:12px;'>"
+				 + "                        What's New: " + "<br>"
+				 + "                          - Imprecise Payment Bug Fix <br>"
+				 + "                          - Better Runtime                           <br>"
+				 + "   Released: 8.06.2026 " + "<font color='red'>(Tracker Disabled)</font>"
+				 + "</pre></html>");
 		}
 	}
 	private void setInformation(final String info) {
@@ -53,10 +59,17 @@ public class TextBox {
 		 textPane.setToolTipText(warningTip);
 		 if(latestMonth > lastMonth && latestDate == lastDate) {
 			 daysAgo = " (" + String.valueOf(latestMonth - lastMonth) + "mo)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 1.06.2026" + daysAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 8.06.2026" + daysAgo);
 		 }else if(latestDate < lastDate) {
 			 monthsAgo = " (" + (daysPerMonth - (lastDate -= latestDate)) + "d)";
-			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 1.06.2026" + monthsAgo);
+			 setInformation("                        What's New: " + "\n                          - Background Bug Fixes \n                          \n   Released: 8.06.2026" + monthsAgo);
+		 }else if(lastDate == latestDate && lastMonth == latestMonth) {
+			 daysAgo = "(<font color='green'><b>Today</b></font>)";
+			 setInformation("<html><pre style='font-family:sans-serif; font-size:11px;'>" + "                        What's New: <br>"  + "                          - Background Bug Fixes <br>"  + "                          <br>" + "   Released: 8.06.2026 " + daysAgo + "</pre></html>" + daysAgo);
+		 }else if(lastDate == 0 && lastMonth == 0) {
+			 textPane.setContentType("text/plain");
+			 textPane.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 15));
+			 setInformation("\n   Tracker failed to load the last Update date. 🌧️");
 		 }
-	} 
+	 }  
 }
