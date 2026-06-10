@@ -37,7 +37,6 @@ this Application By itself is Demonstrational, It isn't used for real-world Inte
     Make sure that you have a Latest JDK Installed -> Go to 'Releases' section of the Repo -> navigate to Latest Release -> Download jar files there and run it.
   ### License
 This project is licensed under the Apache License v2.0 - see the LICENSE file for details.
-
 <br/>**Important!**
       <br/> Images bellow that you see could be old. However, they can get renewed anytime.
 
