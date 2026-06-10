@@ -43,7 +43,7 @@ This project is licensed under the Apache License v2.0 - see the LICENSE file fo
 
 * Demonstration: 👇
 * Startup loading bar 📶:
-  ![gif alt](RecipeManager/images/startup_system.gif)
+  ![gif alt](RecipeManager/images/startup.gif)
 * Choose food products 🍔:
   ![gif alt](RecipeManager/images/choose_products.gif)
 * Automatic Screen Cleanup 🧽:
