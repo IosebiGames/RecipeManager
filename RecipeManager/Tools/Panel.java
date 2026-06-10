@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Panel {
-
 	private Screen screen;
 	
 	public Panel(Screen s) {
