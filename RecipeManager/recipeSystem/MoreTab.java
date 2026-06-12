@@ -19,6 +19,7 @@ public class MoreTab {
     private RecipeHandler rh;
     private Labels l;
 	private Button b;
+	private Fonts f;
 	private Timer resetTimer;
     private int counter = 0;
     private String[] text, labelTexts;
@@ -34,7 +35,8 @@ public class MoreTab {
 		this.rh = rh;
 		this.l = new Labels(app.screen);
 		this.b = new Button();
-	    this.labelTexts = new String[] {"Product:", "Calories:", "Possible Vitamins:", "Fats:", "Sodium:", "Protein:", "Water:", "Allergens:"};
+		this.f = new Fonts();
+	    this.labelTexts = new String[] {"Product:", "Calories:", "Vitamins:", "Fats:", "Sodium:", "Protein:", "Water:", "Allergens:"};
     }
 	public void openMoreTab() {
 		for(int i = 0; i <= 7; i++) {
@@ -43,6 +45,7 @@ public class MoreTab {
 		buttonList.add(new JButton("Request all Recipes"));
 		buttonList.add(new JButton("Close"));
 	    PanelList.add(new JPanel());
+	    f.AllowExternalFont("src/fonts/Inter_bold.ttf");
 	    
 		resetTimer = new Timer(1000, _ -> {
 			counter++;
@@ -75,17 +78,17 @@ public class MoreTab {
 			buttonList.get(i).setBackground(Color.white);
 			buttonList.get(i).setForeground(Color.black);
 		}
-		l.createLabel(labelList.get(0), createFont("Tahoma", Font.BOLD, 15), Color.black, new Bounds(28, -8, 181, 63).getBounds(), false, null);
-		l.createLabel(labelList.get(1), createFont("Times New Roman", Font.BOLD, 18), Color.black, new Bounds(10, 31, 118, 51).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(2), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 73, 165, 51).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(3), createFont("Times New Roman", Font.BOLD, 18), Color.black, new Bounds(10, 136, 175, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(4), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 96, 165, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(5), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 116, 165, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(6), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 156, 175, 41).getBounds(), false, PanelList.get(0));
-		l.createLabel(labelList.get(7), createFont("Times New Roman", Font.BOLD, 16), Color.black, new Bounds(10, 176, 175, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(0), createFont("Inter", Font.BOLD, 15), Color.black, new Bounds(28, -8, 181, 63).getBounds(), false, null);
+		l.createLabel(labelList.get(1), createFont("Inter", Font.BOLD, 18), Color.black, new Bounds(10, 31, 118, 51).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(2), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 73, 177, 51).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(3), createFont("Inter", Font.BOLD, 18), Color.black, new Bounds(10, 136, 175, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(4), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 96, 165, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(5), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 116, 165, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(6), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 156, 175, 41).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(7), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 176, 175, 41).getBounds(), false, PanelList.get(0));
 		
 		productBox.setFocusable(false);
-		productBox.setFont(createFont("Segoe UI", Font.BOLD, 14));
+		productBox.setFont(createFont("Inter", Font.BOLD, 14));
 		productBox.setBounds(new Bounds( 88, 41, 170, 41).getBounds());
 		productBox.addActionListener(e -> {
 			  switch(productBox.getSelectedIndex()) {
