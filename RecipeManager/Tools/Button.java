@@ -6,11 +6,14 @@ import java.awt.event.*;
 import sound.Sound;
 
 public class Button {
+	private Fonts f;
 
 	public void createButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
+        f = new Fonts();
+        f.AllowExternalFont("src/fonts/Inter_bold.ttf");
         b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
-        b.setFont(new Font("Arial", Font.BOLD, 12));
+        b.setFont(new Font("Inter", Font.BOLD, 12));
         b.setBackground(bc);
         b.setForeground(fc);
         b.setVisible(visible);
@@ -29,9 +32,11 @@ public class Button {
         panel.add(b);
 	}
 	public void createSoundlessButton(JButton b, Rectangle rect, boolean focusableStatus, JPanel panel, boolean visible, Color bc, Color fc) {
-        b.setFocusable(focusableStatus);
+		f = new Fonts();
+        f.AllowExternalFont("src/fonts/Inter_bold.ttf");
+		b.setFocusable(focusableStatus);
         b.setBounds(rect.getBounds());
-        b.setFont(new Font("Arial", Font.BOLD, 12));
+        b.setFont(new Font("Inter", Font.BOLD, 12));
         b.setBackground(bc);
         b.setForeground(fc);
         b.setVisible(visible);
