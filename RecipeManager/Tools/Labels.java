@@ -17,9 +17,9 @@ public class Labels {
 		label.setFocusable(focusableStatus);
 		label.setForeground(foregroundColor);
 		label.setFont(font);
+		this.screen.window.add(label);
 		if (partPanel != null) {
 			partPanel.add(label);
 		}
-		this.screen.window.add(label);
 	}
 }
