@@ -74,19 +74,15 @@ public class StartupScreen {
 		 return bar;
 	}
 	public static void setMode(String mode, String runtimeType) {
-		if(runtimeType != null) {
-		     if(mode.equals("Light") && runtimeType.equals("User Runtime")) {
-					setRuntimeState("Light", "User Runtime");
-			 }else if(mode.equals("Dark") && runtimeType.equals("User Runtime")) {
-					setRuntimeState("Dark", "User Runtime");
-			 }else if(mode.equals("Light") && runtimeType.equals("Developer Runtime")) {
-					setRuntimeState("Light", "Developer Runtime");
-			 }else if(mode.equals("Dark") && runtimeType.equals("Developer Runtime")) {
-					setRuntimeState("Dark", "Developer Runtime");
-			 }
-		}else {
-			return;
-		}
+		if(mode.equals("Light") && runtimeType.equals("User Runtime")) {
+			   setRuntimeState("Light", "User Runtime");
+		}else if(mode.equals("Dark") && runtimeType.equals("User Runtime")) {
+			   setRuntimeState("Dark", "User Runtime");
+	    }else if(mode.equals("Light") && runtimeType.equals("Developer Runtime")) {
+			   setRuntimeState("Light", "Developer Runtime");
+		}else if(mode.equals("Dark") && runtimeType.equals("Developer Runtime")) {
+			   setRuntimeState("Dark", "Developer Runtime");
+	    }
 	}
 	private static void setRuntimeState(String mode, String runtimeType) {
 		  if(mode.equals("Light") || mode.equals("Light".toLowerCase()) && runtimeType.equals("User Runtime")) {
