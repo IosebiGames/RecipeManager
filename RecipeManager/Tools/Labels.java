@@ -1,11 +1,10 @@
 package Tools;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class Labels {
 	private Screen screen;
@@ -18,9 +17,9 @@ public class Labels {
 		label.setFocusable(focusableStatus);
 		label.setForeground(foregroundColor);
 		label.setFont(font);
-		this.screen.window.add(label);
 		if (partPanel != null) {
 			partPanel.add(label);
 		}
+		this.screen.window.add(label);
 	}
 }
