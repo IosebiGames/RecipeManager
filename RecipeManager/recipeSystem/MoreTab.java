@@ -78,8 +78,8 @@ public class MoreTab {
 			buttonList.get(i).setBackground(Color.white);
 			buttonList.get(i).setForeground(Color.black);
 		}
-		l.createLabel(labelList.get(0), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(28, -8, 181, 63).getBounds(), false, null);
-		l.createLabel(labelList.get(1), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 31, 118, 51).getBounds(), false, PanelList.get(0));
+		l.createLabel(labelList.get(0), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(28, -19, 181, 63).getBounds(), false, null);
+		l.createLabel(labelList.get(1), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 51, 118, 51).getBounds(), false, PanelList.get(0));
 		l.createLabel(labelList.get(2), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 73, 177, 51).getBounds(), false, PanelList.get(0));
 		l.createLabel(labelList.get(3), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 136, 175, 41).getBounds(), false, PanelList.get(0));
 		l.createLabel(labelList.get(4), createFont("Inter", Font.BOLD, 16), Color.black, new Bounds(10, 96, 165, 41).getBounds(), false, PanelList.get(0));
@@ -89,7 +89,7 @@ public class MoreTab {
 		
 		productBox.setFocusable(false);
 		productBox.setFont(createFont("Inter", Font.BOLD, 14));
-		productBox.setBounds(new Bounds( 88, 41, 170, 41).getBounds());
+		productBox.setBounds(new Bounds(88, 31, 170, 41).getBounds());
 		productBox.addActionListener(e -> {
 			  switch(productBox.getSelectedIndex()) {
 			  case 0: displayInfo("Calories: 332", "Vitamin: B12, B6, Iron", "Protein: 26g", "Water: 60mg", "Sodium: 50g", "Fat: 17g (Satured 7g)", "Allergens: 1", "Product: " + "Meat"); break;
@@ -119,7 +119,7 @@ public class MoreTab {
 		    	}
 		});
 		for(int labelIndex = 1; labelIndex <= 7; labelIndex++) {
-			PanelList.get(labelIndex-labelIndex).add(labelList.get(1));
+			PanelList.get(0).add(labelList.get(1));
 		}
 		window.getContentPane().add(PanelList.get(0));
 		window.getContentPane().add(labelList.get(0));
